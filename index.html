@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel-Girls | Digitális tartalomgyártás. Real-AI</title>
     
+    <title>Pixel-Girls | Digitális tartalomgyártás & Real-AI Glamour</title>
+    <meta name="description" content="Pixel-Girls Studio - Prémium AI generált boudoir, glamour és üzleti tartalmak. Maradj anonim, miközben profi hirdetési fotóid készülnek valós alapokból.">
+    <meta name="keywords" content="AI glamour, AI boudoir, OnlyFans marketing, tartalomgyártás, Pixel-Girls, digitális inkognitó, escort hirdetés fotó, üzleti portré AI">
+    <meta name="author" content="Pixel-Girls Studio">
+
+    <meta property="og:title" content="Pixel-Girls | Digitális Inkognitó & AI Glamour">
+    <meta property="og:description" content="Profi tartalomgyártás valós alapokról, AI-módosításokkal. Az időd pénz, mi dolgozunk helyetted.">
+    <meta property="og:image" content="images/pixelgirlsbanner.jpeg">
+    <meta property="og:url" content="https://pixel-girls.github.io/">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/jpg" href="images/favicon.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +23,7 @@
     
     <style>
         :root {
-            --primary-color: #e6b12e;
+            --primary-color: #e6b12e; /* Meleg arany */
             --bg-color: #050505;
             --card-bg: #111111;
             --text-color: #f5f5f5;
@@ -29,7 +39,39 @@
             overflow-x: hidden;
         }
 
-        /* --- FELSŐ FOTÓ --- */
+        /* --- LIGHTBOX MODAL --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(230, 177, 46, 0.2);
+            border: 1px solid #333;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- BANNER --- */
         .top-photo-container {
             width: 100%;
             background-color: #000;
@@ -45,7 +87,6 @@
             display: block;
         }
 
-        /* --- FEJLÉC --- */
         header {
             text-align: center;
             padding: 60px 20px;
@@ -84,6 +125,7 @@
         .btn:hover {
             background: var(--primary-color);
             color: #000;
+            box-shadow: 0 0 20px rgba(230, 177, 46, 0.3);
         }
 
         /* --- GALÉRIA --- */
@@ -172,6 +214,7 @@
             padding: 0;
             margin: 20px 0;
             color: #ccc;
+            text-align: left;
         }
 
         .price-details li {
@@ -185,38 +228,6 @@
             color: var(--primary-color);
             font-weight: bold;
             margin-top: 20px;
-        }
-
-        /* --- LIGHTBOX MODAL --- */
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
-        }
-
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            box-shadow: 0 0 50px rgba(230, 177, 46, 0.2);
-            border: 1px solid #333;
-        }
-
-        #lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
         }
 
         /* --- SZOLGÁLTATÁSOK --- */
@@ -243,7 +254,6 @@
             color: #888;
             text-decoration: none;
             font-size: 0.8rem;
-            transition: color 0.3s;
         }
 
         footer a:hover {
@@ -278,7 +288,7 @@
     <header>
         <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">A fotózások korszaka véget ért</p>
         <h1>PIXEL-GIRLS</h1>
-        <p>Professzionális tartalomgyártás valós alapokról, AI.-módosításokkal. <br> Az időd pénz! Mi dolgozunk helyetted.</p>
+        <p>Professzionális tartalomgyártás valós alapokról, AI-módosításokkal. <br> Az időd pénz! Mi dolgozunk helyetted.</p>
         <a href="#arak" class="btn">Árak megtekintése</a>
     </header>
 
@@ -286,27 +296,27 @@
         <h2>VALÓDI ÁTVÁLTOZÁSOK</h2>
         <div class="gallery">
             <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
-                <img src="images/1.jpg" alt="Referencia 1">
+                <img src="images/1.jpg" alt="AI Glamour átváltozás 1">
                 <div class="gallery-caption">SZELFI ➔ PRÉMIUM GLAMOUR</div>
             </div>
             
             <div class="gallery-item" onclick="openLightbox('images/2.jpg')">
-                <img src="images/2.jpg" alt="Referencia 2">
+                <img src="images/2.jpg" alt="AI Glamour átváltozás 2">
                 <div class="gallery-caption">SZELFI ➔ LUXUS EROTIKA</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
-                <img src="images/3.jpg" alt="Referencia 3">
+                <img src="images/3.jpg" alt="AI Glamour átváltozás 3">
                 <div class="gallery-caption">SZELFI ➔ PRÉMIUM HIRDETÉSI FOTÓK</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
-                <img src="images/4.jpg" alt="Referencia 4">
+                <img src="images/4.jpg" alt="Társkereső profil átváltozás">
                 <div class="gallery-caption">SZELFI ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
-                <img src="images/5.jpg" alt="Referencia 5">
+                <img src="images/5.jpg" alt="Üzleti portré átváltozás">
                 <div class="gallery-caption">SZELFI ➔ PROFI ÜZLETI PORTFÓLIÓ</div>
             </div>
         </div>
@@ -319,10 +329,10 @@
                 <h3>ALAP CSOMAG</h3>
                 <div class="price-main">35.000 Ft</div>
                 <ul class="price-details">
-                    <li>5 db prémium minőségű ultra realisztikus fotó</li>
-                    <li>Választható stílus és környezet</li>
+                    <li>5 db prémium AI generált kép</li>
+                    <li>Választható stílus és helyszín</li>
                     <li>Retusálás és fényelés</li>
-                    <li>Digitális átadás</li>
+                    <li>Vízjelezett előnézet fizetés előtt</li>
                 </ul>
                 <div class="price-extra">+ További képek: 4.500 Ft / db</div>
                 <br>
@@ -336,7 +346,7 @@
         <div class="features">
             <div class="feature-box">
                 <h3>100% DISZKRÉCIÓ</h3>
-                <p>Nincs szükség személyes találkozásra. Ha kell, eltüntetjük a felismerhető jegyeidet. Elképzeléseid szerint módosítunk a megjelenéseden Az AI által generált módosításokkal biztonságban lehetsz.</p>
+                <p>Nincs szükség személyes találkozásra. Ha kell, eltüntetjük a felismerhető jegyeidet. Az AI által generált módosításokkal biztonságban lehetsz.</p>
             </div>
             <div class="feature-box">
                 <h3>ZÉRÓ JÁRULÉKOS KÖLTSÉG</h3>
@@ -344,7 +354,7 @@
             </div>
             <div class="feature-box">
                 <h3>RUGALMAS LEHETŐSÉGEK</h3>
-                <p>Kifejezetten a társkereső, az üzleti és az erotikus szegmens igényeire szabott, eladható képi világot teremtünk. Ahol a képeid garantálják a sikereidet</p>
+                <p>Kifejezetten a társkereső, az üzleti és az erotikus szegmens igényeire szabott, eladható képi világot teremtünk.</p>
             </div>
         </div>
     </section>
