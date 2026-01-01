@@ -13,7 +13,7 @@
     
     <style>
         :root {
-            --primary-color: #e6b12e; /* Meleg borostyán arany */
+            --primary-color: #e6b12e;
             --bg-color: #050505;
             --card-bg: #111111;
             --text-color: #f5f5f5;
@@ -29,22 +29,23 @@
             overflow-x: hidden;
         }
 
-        /* --- FELSŐ FOTÓ (Banner) --- */
+        /* --- FELSŐ FOTÓ --- */
         .top-photo-container {
             width: 100%;
             background-color: #000;
             display: flex;
             justify-content: center;
+            cursor: zoom-in; /* Jelzi, hogy kattintható */
         }
 
         .top-photo-container img {
             width: 100%;
             height: auto;
-            max-width: 1200px; /* Asztali gépen elegáns méret */
+            max-width: 1200px;
             display: block;
         }
 
-        /* --- FEJLÉC ÉS SZÖVEG --- */
+        /* --- FEJLÉC --- */
         header {
             text-align: center;
             padding: 60px 20px;
@@ -83,10 +84,9 @@
         .btn:hover {
             background: var(--primary-color);
             color: #000;
-            box-shadow: 0 0 20px rgba(230, 177, 46, 0.4);
         }
 
-        /* --- SZEKCIÓK --- */
+        /* --- GALÉRIA --- */
         section {
             padding: 80px 20px;
             max-width: 1100px;
@@ -99,10 +99,8 @@
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 50px;
-            letter-spacing: 2px;
         }
 
-        /* --- ELŐTTE-UTÁNA GALÉRIA --- */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -115,10 +113,11 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: zoom-in;
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--primary-color);
         }
 
@@ -127,20 +126,46 @@
             height: auto;
             display: block;
             filter: brightness(0.9) contrast(1.1);
-            transition: 0.5s;
-        }
-
-        .gallery-item:hover img {
-            filter: brightness(1.1);
         }
 
         .gallery-caption {
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             font-weight: bold;
             color: var(--primary-color);
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        /* --- LIGHTBOX MODAL (A NAGYÍTÁS) --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(230, 177, 46, 0.2);
+            border: 1px solid #333;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         /* --- SZOLGÁLTATÁSOK --- */
@@ -154,17 +179,6 @@
             background: #0d0d0d;
             padding: 40px;
             border-left: 2px solid var(--primary-color);
-            transition: 0.3s;
-        }
-
-        .feature-box:hover {
-            background: #151515;
-        }
-
-        .feature-box h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.4rem;
         }
 
         footer {
@@ -183,17 +197,19 @@
             margin-bottom: 20px;
         }
 
-        /* MOBIL NÉZET */
         @media (max-width: 768px) {
-            header { padding: 40px 15px; }
-            section { padding: 50px 15px; }
             .gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-photo-container">
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <div class="top-photo-container" onclick="openLightbox('images/pixelgirlsbanner.jpeg')">
         <img src="images/pixelgirlsbanner.jpeg" alt="Pixel-Girls Cover Photo">
     </div>
 
@@ -207,55 +223,63 @@
     <section id="atvaltozasok">
         <h2>VALÓDI ÁTVÁLTOZÁSOK</h2>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/1.jpg" alt="Referencia fotó és AI végeredmény 1">
+            <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
+                <img src="images/1.jpg" alt="Referencia 1">
                 <div class="gallery-caption">REFERENCIA ➔ PRÉMIUM GLAMOUR</div>
             </div>
             
-            <div class="gallery-item">
-                <img src="images/2.jpg" alt="Referencia fotó és AI végeredmény 2">
+            <div class="gallery-item" onclick="openLightbox('images/2.jpg')">
+                <img src="images/2.jpg" alt="Referencia 2">
                 <div class="gallery-caption">MOBIL SZELFI ➔ LUXUS EROTIKA</div>
             </div>
 
-            <div class="gallery-item">
-                <img src="images/3.jpg" alt="Referencia fotó és AI végeredmény 3">
+            <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
+                <img src="images/3.jpg" alt="Referencia 3">
                 <div class="gallery-caption">HÁZI FOTÓ ➔ HIRDETÉSI KAMPÁNY</div>
             </div>
         </div>
     </section>
 
     <section id="szolgaltatas">
-        <h2>MIÉRT VÁLASZD A PIXEL-GIRLS-T?</h2>
+        <h2>MIÉRT A PIXEL-GIRLS?</h2>
         <div class="features">
             <div class="feature-box">
                 <h3>100% DISZKRÉCIÓ</h3>
-                <p>Eltüntetjük a felismerhető jegyeket, anyajegyeket vagy tetoválásokat. Az AI által generált arccal és testtel teljes biztonságban lehetsz.</p>
+                <p>Eltüntetjük a felismerhető jegyeket. Az AI által generált arccal és testtel teljes biztonságban lehetsz.</p>
             </div>
             <div class="feature-box">
-                <h3>ZÉRÓ KÖLTSÉGHELY</h3>
-                <p>Nincs stúdióbérlés, nincs sminkes, nincs drága fotós felszerelés. Csak a te referenciád és a mi technológiánk.</p>
+                <h3>ZÉRÓ KÖLTSÉG</h3>
+                <p>Nincs stúdió, sminkes vagy drága fotós. Csak a te eredeti képeid és a mi technológiánk.</p>
             </div>
             <div class="feature-box">
                 <h3>FÜLLEDT ESZTÉTIKA</h3>
-                <p>Kifejezetten az erotikus iparág igényeire szabott, eladható és vonzó képi világot teremtünk neked.</p>
+                <p>Kifejezetten az erotikus iparág igényeire szabott, eladható képi világot teremtünk.</p>
             </div>
         </div>
     </section>
 
     <section id="kapcsolat" style="text-align: center;">
         <h2>KÉSZEN ÁLLSZ A VÁLTÁSRA?</h2>
-        <p>Lépj be a digitális tartalomgyártás új korszakába, ahol te irányítod a látszatot.</p>
-        <br>
-        <a href="mailto:hello@pixel-girls.hu" class="btn">Kapcsolatfelvétel</a>
+        <a href="mailto:pixelgirlsstudio@gmail.com" class="btn">Kapcsolatfelvétel</a>
     </section>
 
     <footer>
         <div class="warning-18">18+ ADULT CONTENT</div>
         <p>&copy; 2026 PIXEL-GIRLS STUDIO | Minden jog fenntartva.</p>
-        <p style="opacity: 0.5; font-size: 0.75rem; max-width: 600px; margin: 20px auto;">
-            Ez az oldal valós személyeket tartalmazó, de mesterséges inteligencia által módosított tartalmakat használ.
-        </p>
     </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Letiltja a görgetést a háttérben
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Visszaállítja a görgetést
+        }
+    </script>
 
 </body>
 </html>
