@@ -1,39 +1,115 @@
+Íme a teljes, végleges kódsor az ÁSZF (aszf.html) oldaladhoz, az összes eddigi pontosítással és a bizalomépítő, vízjeles-utólagos fizetési folyamattal kiegészítve.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÁSZF | Pixel-Girls Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #e6b12e;
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-color: #f5f5f5;
+        }
+
         body {
             font-family: 'Raleway', sans-serif;
-            background-color: #050505;
-            color: #f5f5f5;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
             padding: 40px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
-        h1, h2 { color: #e6b12e; }
+
         .back-link {
             display: inline-block;
-            margin-bottom: 20px;
-            color: #e6b12e;
+            margin-bottom: 30px;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
-        }
-        .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #111;
-            border-left: 3px solid #e6b12e;
-        }
-        footer {
-            margin-top: 50px;
+            text-transform: uppercase;
             font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
             text-align: center;
-            opacity: 0.6;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            body { padding: 20px 15px; }
         }
     </style>
 </head>
@@ -41,41 +117,53 @@
 
     <a href="index.html" class="back-link">← Vissza a főoldalra</a>
 
-    <h1>Általános Szerződési Feltételek (ÁSZF)</h1>
-    <p>Frissítve: 2026.01.01.</p>
+    <h1>Általános Szerződési Feltételek</h1>
+    <p class="date">Utolsó frissítés: 2026. január 1.</p>
 
     <div class="section">
-        <h2>1. Szolgáltatás meghatározása</h2>
-        <p>A Pixel-Girls Studio (továbbiakban: Szolgáltató) mesterséges intelligencia (AI) technológia segítségével képi tartalomgenerálási szolgáltatást nyújt. A Szolgáltató a Megrendelő által küldött referenciafotók alapján új, digitálisan generált képeket készít.</p>
+        <h2>1. A szolgáltatás meghatározása</h2>
+        <p>A <strong>Pixel-Girls Studio</strong> (továbbiakban: Szolgáltató) mesterséges intelligencia (AI) alapú képgenerálási és digitális retusálási szolgáltatást nyújt. A szolgáltatás lényege, hogy a Megrendelő által küldött referenciafotók alapján a Szolgáltató új, digitális vizuális tartalmakat hoz létre a kért stílusban (glamour, boudoir, üzleti, társkereső).</p>
     </div>
 
     <div class="section">
-        <h2>2. Adatkezelés és Diszkréció</h2>
-        <p>A Szolgáltató vállalja, hogy a Megrendelő által küldött eredeti referenciafotókat kizárólag a munkafolyamat során használja fel, azokat harmadik félnek nem adja ki. A megrendelés teljesítése és átvétele után az eredeti referenciafotók a Szolgáltató rendszeréből 30 napon belül törlésre kerülnek.</p>
+        <h2>2. Adatvédelem és Diszkréció</h2>
+        <p>A Szolgáltató kiemelt figyelmet fordít a Megrendelő magánéletének védelmére:</p>
+        <ul>
+            <li>A beküldött eredeti referenciafotókat kizárólag a munkafolyamat idejére tároljuk.</li>
+            <li><strong>Törlési garancia:</strong> Az eredeti (nyers) fotók a megrendelés teljesítését követő 30 napon belül véglegesen törlésre kerülnek a Szolgáltató rendszeréből.</li>
+            <li>A Szolgáltató harmadik félnek nem adja át a Megrendelő adatait vagy fotóit.</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2>3. Szerzői jogok</h2>
-        <p>A generált képek felhasználási joga a Megrendelőt illeti meg. A Megrendelő jogosult a kész képeket saját célra, közösségi média felületein, illetve hirdetési felületein korlátozás nélkül felhasználni. A Szolgáltató fenntartja a jogot, hogy a kész képeket referenciaként használja (pl. weboldalon), kivéve, ha a Megrendelő a megrendeléskor írásban kéri az anonimitás teljes megőrzését.</p>
+        <h2>3. Szerzői jogok és felhasználás</h2>
+        <p>Az elkészült digitális képek felhasználási joga a sikeres fizetést követően teljes egészében a <strong>Megrendelőt illeti meg</strong>. A Megrendelő jogosult a képeket tetszőleges platformon (közösségi média, OnlyFans, hirdetési felületek) korlátozás nélkül felhasználni.</p>
     </div>
 
     <div class="section">
-        <h2>4. Árak és Fizetés</h2>
-        <p>Az aktuális árak a weboldalon (index.html) találhatóak. Az Alapcsomag (5 kép) díja 35.000 Ft. Minden további kép 4.500 Ft/db. A fizetés előreutalással vagy online fizetési felületen keresztül történik. A munka megkezdésének feltétele a díj megfizetése.</p>
+        <h2>4. Megrendelés és Fizetés menete</h2>
+        <p>A Megrendelő bizalmának megőrzése érdekében a fizetés az alábbi folyamat szerint történik:</p>
+        <ul>
+            <li><strong>Képek elkészítése:</strong> A Szolgáltató a kapott instrukciók alapján legenerálja a képeket.</li>
+            <li><strong>Megtekintés:</strong> A Szolgáltató egy <strong>vízjelezett, alacsony felbontású előnézetet</strong> küld a Megrendelőnek.</li>
+            <li><strong>Jóváhagyás és Fizetés:</strong> Amennyiben a Megrendelő elégedett az eredménnyel, a szolgáltatás díját <strong>banki átutalással</strong> egyenlíti ki a megadott számlaszámra.</li>
+            <li><strong>Átadás:</strong> A fizetés beérkezése után a Szolgáltató haladéktalanul megküldi a vízjel nélküli, nagyfelbontású digitális fotókat.</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2>5. Elállási jog</h2>
-        <p>Tekintettel arra, hogy a szolgáltatás egyedi igények alapján készülő digitális termék, a munka megkezdése (a képek generálása) után a Megrendelőt nem illeti meg az elállási jog. Amennyiben a Szolgáltató technikai okokból nem tudja teljesíteni a kérést, a teljes összeg visszajár.</p>
+        <h2>5. Elállás és Garancia</h2>
+        <p>Mivel a szolgáltatás egyedi igények alapján készülő digitális termék, a már legenerált képek esetében az elállási jog korlátozott. Ugyanakkor, mivel a fizetés csak a vízjelezett előnézet elfogadása után történik, a Megrendelőnek lehetősége van a folyamat megszakítására a fizetés előtt, amennyiben nem elégedett az eredménnyel.</p>
     </div>
 
     <div class="section">
         <h2>6. Felelősségvállalás</h2>
-        <p>A Megrendelő büntetőjogi felelőssége tudatában kijelenti, hogy a küldött referenciafotókon ő maga szerepel, vagy rendelkezik az érintett személy beleegyezésével. A Szolgáltató nem vállal felelősséget a Megrendelő által küldött fotók forrásáért.</p>
+        <p>A Megrendelő felelősséget vállal azért, hogy a beküldött referenciafotókon ő maga szerepel, vagy rendelkezik a képen látható személy engedélyével. A Szolgáltató nem felelős a Megrendelő által használt fotók eredetéért.</p>
     </div>
 
     <footer>
-        Pixel-Girls Studio &copy; 2026 | Minden jog fenntartva.
+        &copy; 2026 PIXEL-GIRLS STUDIO | Minden jog fenntartva. <br>
+        A szolgáltatás igénybevételével a Megrendelő elfogadja a fenti feltételeket.
     </footer>
 
 </body>
