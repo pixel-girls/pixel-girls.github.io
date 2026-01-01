@@ -35,7 +35,7 @@
             background-color: #000;
             display: flex;
             justify-content: center;
-            cursor: zoom-in; /* Jelzi, hogy kattintható */
+            cursor: zoom-in;
         }
 
         .top-photo-container img {
@@ -136,7 +136,7 @@
             font-size: 0.85rem;
         }
 
-        /* --- LIGHTBOX MODAL (A NAGYÍTÁS) --- */
+        /* --- LIGHTBOX MODAL --- */
         #lightbox {
             display: none;
             position: fixed;
@@ -237,6 +237,16 @@
                 <img src="images/3.jpg" alt="Referencia 3">
                 <div class="gallery-caption">SZELFI ➔ PRÉMIUM HIRDETÉSI FOTÓK</div>
             </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
+                <img src="images/4.jpg" alt="Referencia 4">
+                <div class="gallery-caption">SZELFI ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
+                <img src="images/5.jpg" alt="Referencia 5">
+                <div class="gallery-caption">SZELFI ➔ PROFI ÜZLETI PORTFÓLIÓ</div>
+            </div>
         </div>
     </section>
 
@@ -272,12 +282,12 @@
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Letiltja a görgetést a háttérben
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Visszaállítja a görgetést
+            document.body.style.overflow = 'auto';
         }
     </script>
 
