@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel-Girls | Digitális Inkognitó & AI Glamour</title>
     
-    <link rel="icon" type="image/png" href="images/favicon.jpg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #d4af37; /* Arany */
-            --bg-color: #0a0a0a; /* Sötét fekete */
+            --primary-color: #d4af37;
+            --bg-color: #0a0a0a;
             --text-color: #f5f5f5;
         }
 
@@ -23,6 +23,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden; /* Megakadályozza az oldalra csúszkálást mobilnál */
         }
 
         h1, h2, h3 {
@@ -31,10 +32,12 @@
         }
 
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/pixelgirlsbanner.jpeg');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/pixelgirlsbanner.jpeg');
             background-size: cover;
-            background-position: center;
+            background-position: center center; /* Középre igazítás */
+            background-repeat: no-repeat;
             height: 100vh;
+            height: 100dvh; /* Modern mobil böngészőkhöz */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -44,25 +47,47 @@
         }
 
         header h1 {
-            font-size: 4em;
+            font-size: clamp(2.5rem, 8vw, 4rem); /* Rugalmas méret */
             margin: 0;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
         header p {
-            font-size: 1.5em;
-            margin: 20px 0 40px;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin: 15px 0 30px;
+            max-width: 600px;
+        }
+
+        /* MOBIL SPECIFIKUS BEÁLLÍTÁSOK */
+        @media (max-width: 768px) {
+            header {
+                /* Itt állíthatod, melyik része legyen látható a képnek mobilnál. 
+                   Ha a modell feje felül van, használd a 'top center' értéket. */
+                background-position: center center; 
+                padding-top: 50px;
+            }
+            
+            section {
+                padding: 40px 15px;
+            }
+
+            .feature-box {
+                flex-basis: 100%;
+            }
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
             transition: all 0.3s;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
         }
 
         .btn:hover {
@@ -71,7 +96,7 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1100px;
             margin: auto;
         }
@@ -85,15 +110,16 @@
             justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 40px;
+            gap: 20px;
         }
 
         .feature-box {
-            flex-basis: 30%;
-            min-width: 250px;
-            margin-bottom: 20px;
-            padding: 20px;
+            flex: 1;
+            min-width: 280px;
+            padding: 25px;
             background: #111;
             border-left: 3px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .benefits {
@@ -115,19 +141,21 @@
             justify-content: space-around;
             margin-top: 40px;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         .step {
             text-align: center;
-            flex-basis: 30%;
+            flex: 1;
+            min-width: 250px;
             margin-bottom: 30px;
         }
 
         .step-number {
             font-size: 4em;
             font-family: 'Playfair Display', serif;
-            color: rgba(212, 175, 55, 0.3);
-            margin-bottom: -30px;
+            color: rgba(212, 175, 55, 0.2);
+            margin-bottom: -35px;
             position: relative;
             z-index: 1;
         }
@@ -140,21 +168,25 @@
 
         .gallery img {
             width: 100%;
-            height: auto;
+            height: 350px;
+            object-fit: cover; /* A galéria képei egységesek lesznek */
             display: block;
-            filter: grayscale(30%);
-            transition: 0.3s;
+            filter: grayscale(40%);
+            transition: 0.4s;
+            border: 1px solid #222;
         }
 
         .gallery img:hover {
             filter: grayscale(0%);
+            border-color: var(--primary-color);
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
-            background: #111;
+            padding: 50px 20px;
+            background: #050505;
             margin-top: 60px;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
@@ -169,7 +201,7 @@
 
     <section id="rolunk">
         <h2>A JÖVŐ INKOGNITÓJA</h2>
-        <p style="max-width: 800px; margin: auto;">Felejtsd el a kényelmetlen órákat a stúdióban. A Pixel-Girls megoldást nyújt azoknak, akik professzionális tartalmat akarnak, de megőriznék a privát szférájukat. <br><br> Valós fotóid alapján hozzuk létre digitális hasonmásodat, ahol te irányítod a részleteket: a környezetet, a stílust és a megjelenést.</p>
+        <p style="max-width: 800px; margin: auto; font-size: 1.1em; opacity: 0.9;">Felejtsd el a kényelmetlen órákat a stúdióban. A Pixel-Girls megoldást nyújt azoknak, akik professzionális tartalmat akarnak, de megőriznék a privát szférájukat. <br><br> Valós fotóid alapján hozzuk létre digitális hasonmásodat, ahol te irányítod a részleteket: a környezetet, a stílust és a megjelenést.</p>
         <div class="features">
             <div class="feature-box">
                 <h3>ANONYMITÁS</h3>
@@ -187,50 +219,50 @@
     </section>
 
     <section>
-        <h2>PIXEL-GIRLS VS. HAGYOMÁNYOS FOTÓZÁS</h2>
+        <h2 style="text-align: center;">PIXEL-GIRLS VS. TRADÍCIÓ</h2>
         <div class="benefits">
             <div class="benefit-item">
-                <h3>Költségek</h3>
+                <h3 style="font-size: 1.1rem;">Költségek</h3>
                 <p>Töredéke a stúdiódíjnak</p>
             </div>
             <div class="benefit-item">
-                <h3>Időigény</h3>
-                <p>Gyors generálás hetekig tartó várakozás helyett</p>
+                <h3 style="font-size: 1.1rem;">Időigény</h3>
+                <p>Gyors generálás várakozás helyett</p>
             </div>
             <div class="benefit-item">
-                <h3>Diszkréció</h3>
-                <p>100% Online & Privát folyamat</p>
+                <h3 style="font-size: 1.1rem;">Diszkréció</h3>
+                <p>100% Online & Privát</p>
             </div>
             <div class="benefit-item">
-                <h3>Módosíthatóság</h3>
-                <p>Tetszőleges testalkat és stílus</p>
+                <h3 style="font-size: 1.1rem;">Rugalmasság</h3>
+                <p>Tetszőleges helyszín és stílus</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>Hogyan működik?</h2>
+        <h2 style="text-align: center;">Hogyan működik?</h2>
         <div class="steps">
             <div class="step">
                 <div class="step-number">01</div>
                 <h3>REFERENCIA</h3>
-                <p>Küldj néhány alapfotót magadról (akár mobillal készültet is), ami alapján az AI dolgozni tud.</p>
+                <p>Küldj néhány alapfotót magadról, ami alapján az AI dolgozni tud.</p>
             </div>
             <div class="step">
                 <div class="step-number">02</div>
                 <h3>GENERÁLÁS</h3>
-                <p>Létrehozzuk a digitális hasonmásodat az általad kért stílusban, helyszínen és paraméterekkel.</p>
+                <p>Létrehozzuk a digitális hasonmásodat az általad kért paraméterekkel.</p>
             </div>
             <div class="step">
                 <div class="step-number">03</div>
                 <h3>ÁTADÁS</h3>
-                <p>Megkapod a kész, kampánykész, nagyfelbontású vizuális anyagokat, amik azonnal használhatóak.</p>
+                <p>Megkapod a kész, nagyfelbontású vizuális anyagokat.</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>Stílus Katalógus</h2>
+        <h2 style="text-align: center;">Stílus Katalógus</h2>
         <div class="gallery">
             <img src="https://via.placeholder.com/600x900/111/d4af37?text=Noir+Stílus" alt="Style 1">
             <img src="https://via.placeholder.com/600x900/111/d4af37?text=Glamour+Művészet" alt="Style 2">
@@ -242,12 +274,12 @@
     <section id="kapcsolat" style="text-align: center;">
         <h2>Készen állsz a váltásra?</h2>
         <p>Kérj egyedi ajánlatot az első digitális sorozatodra.</p>
-        <a href="mailto:pixelgirlsstudio@gmail.com" class="btn">Kapcsolatfelvétel</a>
+        <a href="mailto:hello@pixel-girls.hu" class="btn">Kapcsolatfelvétel</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 PIXEL-GIRLS STUDIO | FELNŐTT TARTALOM 18+</p>
-        <p style="font-size: 0.8em; opacity: 0.7;">Ez az oldal AI technológiát használ vizuális tartalom létrehozására valós emberi referenciák alapján.</p>
+        <p>&copy; 2026 PIXEL-GIRLS STUDIO | 18+ CONTENT</p>
+        <p style="font-size: 0.8em; opacity: 0.6; max-width: 600px; margin: 10px auto;">Ez az oldal AI technológiát használ vizuális tartalom létrehozására valós emberi referenciák alapján, tiszteletben tartva a magánéletet.</p>
     </footer>
 
 </body>
