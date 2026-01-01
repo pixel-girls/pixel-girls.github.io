@@ -1,3 +1,7 @@
+Íme a frissített kód, amelybe beépítettem az új Árlista szekciót és az ÁSZF hivatkozást a láblécbe. Az árlistát egy elegáns, kiemelt kártyaként terveztem meg, ami jól illeszkedik a meglévő "fülledt arany" dizájnhoz.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -136,6 +140,57 @@
             font-size: 0.85rem;
         }
 
+        /* --- ÁRLISTA --- */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(230, 177, 46, 0.1);
+        }
+
+        .price-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .price-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .price-details {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        .price-details li {
+            margin: 10px 0;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+
+        .price-extra {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
         /* --- LIGHTBOX MODAL --- */
         #lightbox {
             display: none;
@@ -183,9 +238,20 @@
 
         footer {
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
             background: #000;
             border-top: 1px solid #1a1a1a;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
         }
 
         .warning-18 {
@@ -217,7 +283,7 @@
         <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">A fotózások korszaka véget ért</p>
         <h1>PIXEL-GIRLS</h1>
         <p>Professzionális tartalomgyártás valós alapokról, AI.-módosításokkal. <br> Az időd pénz! Mi dolgozunk helyetted.</p>
-        <a href="#kapcsolat" class="btn">Kérj ajánlatot</a>
+        <a href="#arak" class="btn">Árak megtekintése</a>
     </header>
 
     <section id="atvaltozasok">
@@ -250,6 +316,25 @@
         </div>
     </section>
 
+    <section id="arak">
+        <h2>ÁRLISTA</h2>
+        <div class="pricing-container">
+            <div class="price-card">
+                <h3>ALAP CSOMAG</h3>
+                <div class="price-main">35.000 Ft</div>
+                <ul class="price-details">
+                    <li>5 db prémium AI generált kép</li>
+                    <li>Választható stílus és helyszín</li>
+                    <li>Retusálás és fényelés</li>
+                    <li>Digitális átadás</li>
+                </ul>
+                <div class="price-extra">+ További képek: 4.500 Ft / db</div>
+                <br>
+                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.9rem;">Megrendelem</a>
+            </div>
+        </div>
+    </section>
+
     <section id="szolgaltatas">
         <h2>MIÉRT A PIXEL-GIRLS?</h2>
         <div class="features">
@@ -276,6 +361,7 @@
     <footer>
         <div class="warning-18">18+ ADULT CONTENT</div>
         <p>&copy; 2026 PIXEL-GIRLS STUDIO | Minden jog fenntartva.</p>
+        <p><a href="aszf.html">Általános Szerződési Feltételek (ÁSZF)</a></p>
     </footer>
 
     <script>
