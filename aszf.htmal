@@ -1,0 +1,381 @@
+Íme a frissített kód, amelybe beépítettem az új Árlista szekciót és az ÁSZF hivatkozást a láblécbe. Az árlistát egy elegáns, kiemelt kártyaként terveztem meg, ami jól illeszkedik a meglévő "fülledt arany" dizájnhoz.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel-Girls | Digitális tartalomgyártás. Real-AI</title>
+    
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #e6b12e;
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-color: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- FELSŐ FOTÓ --- */
+        .top-photo-container {
+            width: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            cursor: zoom-in;
+        }
+
+        .top-photo-container img {
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            display: block;
+        }
+
+        /* --- FEJLÉC --- */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #000, var(--bg-color));
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
+            margin: 0;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            max-width: 800px;
+            margin: 20px auto 40px;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s all;
+            letter-spacing: 2px;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        /* --- GALÉRIA --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: zoom-in;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.85rem;
+        }
+
+        /* --- ÁRLISTA --- */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(230, 177, 46, 0.1);
+        }
+
+        .price-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .price-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .price-details {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        .price-details li {
+            margin: 10px 0;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+
+        .price-extra {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* --- LIGHTBOX MODAL --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(230, 177, 46, 0.2);
+            border: 1px solid #333;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- SZOLGÁLTATÁSOK --- */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            background: #0d0d0d;
+            padding: 40px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #000;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .warning-18 {
+            display: inline-block;
+            border: 1px solid #ff0000;
+            color: #ff0000;
+            padding: 5px 10px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <div class="top-photo-container" onclick="openLightbox('images/pixelgirlsbanner.jpeg')">
+        <img src="images/pixelgirlsbanner.jpeg" alt="Pixel-Girls Cover Photo">
+    </div>
+
+    <header>
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">A fotózások korszaka véget ért</p>
+        <h1>PIXEL-GIRLS</h1>
+        <p>Professzionális tartalomgyártás valós alapokról, AI.-módosításokkal. <br> Az időd pénz! Mi dolgozunk helyetted.</p>
+        <a href="#arak" class="btn">Árak megtekintése</a>
+    </header>
+
+    <section id="atvaltozasok">
+        <h2>VALÓDI ÁTVÁLTOZÁSOK</h2>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
+                <img src="images/1.jpg" alt="Referencia 1">
+                <div class="gallery-caption">SZELFI ➔ PRÉMIUM GLAMOUR</div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('images/2.jpg')">
+                <img src="images/2.jpg" alt="Referencia 2">
+                <div class="gallery-caption">SZELFI ➔ LUXUS EROTIKA</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
+                <img src="images/3.jpg" alt="Referencia 3">
+                <div class="gallery-caption">SZELFI ➔ PRÉMIUM HIRDETÉSI FOTÓK</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
+                <img src="images/4.jpg" alt="Referencia 4">
+                <div class="gallery-caption">SZELFI ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
+                <img src="images/5.jpg" alt="Referencia 5">
+                <div class="gallery-caption">SZELFI ➔ PROFI ÜZLETI PORTFÓLIÓ</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="arak">
+        <h2>ÁRLISTA</h2>
+        <div class="pricing-container">
+            <div class="price-card">
+                <h3>ALAP CSOMAG</h3>
+                <div class="price-main">35.000 Ft</div>
+                <ul class="price-details">
+                    <li>5 db prémium AI generált kép</li>
+                    <li>Választható stílus és helyszín</li>
+                    <li>Retusálás és fényelés</li>
+                    <li>Digitális átadás</li>
+                </ul>
+                <div class="price-extra">+ További képek: 4.500 Ft / db</div>
+                <br>
+                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.9rem;">Megrendelem</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="szolgaltatas">
+        <h2>MIÉRT A PIXEL-GIRLS?</h2>
+        <div class="features">
+            <div class="feature-box">
+                <h3>100% DISZKRÉCIÓ</h3>
+                <p>Nincs szükség személyes találkozásra. Ha kell, eltüntetjük a felismerhető jegyeidet. Elképzeléseid szerint módosítunk a megjelenéseden Az AI által generált módosításokkal biztonságban lehetsz.</p>
+            </div>
+            <div class="feature-box">
+                <h3>ZÉRÓ JÁRULÉKOS KÖLTSÉG</h3>
+                <p>Nincs stúdió, sminkes vagy drága fotós. Csak a te referencia képeid és a mi technológiánk.</p>
+            </div>
+            <div class="feature-box">
+                <h3>RUGALMAS LEHETŐSÉGEK</h3>
+                <p>Kifejezetten a társkereső, az üzleti és az erotikus szegmens igényeire szabott, eladható képi világot teremtünk. Ahol a képeid garantálják a sikereidet</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kapcsolat" style="text-align: center;">
+        <h2>KÉSZEN ÁLLSZ A VÁLTÁSRA?</h2>
+        <a href="mailto:pixelgirlsstudio@gmail.com" class="btn">Kapcsolatfelvétel</a>
+    </section>
+
+    <footer>
+        <div class="warning-18">18+ ADULT CONTENT</div>
+        <p>&copy; 2026 PIXEL-GIRLS STUDIO | Minden jog fenntartva.</p>
+        <p><a href="aszf.html">Általános Szerződési Feltételek (ÁSZF)</a></p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+</html>
