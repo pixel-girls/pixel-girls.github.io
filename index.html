@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Pixel-Girls | Digitális Műterem & Virtuális Modellügynökség</title>
-    <meta name="description" content="Pixel-Girls Studio - Prémium hibrid digitális műterem, licencelt virtuális modellek webshopoknak, márka-kampányok, üzleti LinkedIn és életmód portrék.">
-    <meta name="keywords" content="virtuális modellügynökség, digitális műterem, üzleti portré, e-commerce fotózás, hibrid fotózás, Pixel-Girls, licencelt karakterek">
+    <meta name="description" content="Pixel-Girls Studio - Prémium hibrid digitális műterem. Társkereső profilfotók, üzleti LinkedIn portrék és licencelt virtuális modellek márkáknak.">
+    <meta name="keywords" content="társkereső profilfotó, Tinder fotó, üzleti portré, virtuális modellügynökség, digitális műterem, e-commerce fotózás, Pixel-Girls">
     <meta name="author" content="Pixel-Girls Studio">
     <meta name="google-site-verification" content="IDE-MÁSOLD-A-GOOGLE-KÓDOT" />
 
     <meta property="og:title" content="Pixel-Girls | Digitális Műterem & Virtuális Modellügynökség">
-    <meta property="og:description" content="Stúdióminőségű üzleti portrék és kampányfotók fotóstúdió és utazás nélkül. Valódi modellek, 100% jogtisztaság.">
+    <meta property="og:description" content="Stúdióminőségű társkereső képek, üzleti portrék és kampányfotók fotóstúdió és utazás nélkül. Valódi modellek, 100% diszkréció.">
     <meta property="og:image" content="images/pixelgirlsbanner.jpeg">
     <meta property="og:url" content="https://pixel-girls.github.io/">
     <meta property="og:type" content="website">
@@ -158,7 +158,7 @@
 
         .section-desc {
             text-align: center;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 50px;
             color: #aaa;
             font-size: 1rem;
@@ -167,8 +167,8 @@
         /* --- GALÉRIA --- */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
 
         .gallery-item {
@@ -248,18 +248,21 @@
         /* --- ÁRLISTA --- */
         .pricing-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 20px;
         }
 
         .price-card {
             background: var(--card-bg);
             border: 1px solid #222;
-            padding: 40px 30px;
+            padding: 35px 25px;
             text-align: center;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .price-card.featured {
@@ -270,14 +273,14 @@
         .price-card h3 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-color);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
         .price-main {
             font-size: 2.2rem;
             font-weight: 700;
-            margin: 20px 0;
+            margin: 15px 0;
             color: #fff;
         }
 
@@ -287,13 +290,13 @@
             margin: 20px 0;
             color: #ccc;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         .price-details li {
-            margin: 12px 0;
+            margin: 10px 0;
             border-bottom: 1px solid #222;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
 
         /* --- TÁRSOLDALAK --- */
@@ -381,16 +384,49 @@
     <header>
         <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">A hibrid fotóművészet új korszaka</p>
         <h1>PIXEL-GIRLS</h1>
-        <p>Stúdióminőségű üzleti portrék és kampányfotók — fotóstúdió, utazás és feszengés nélkül.<br>Prémium digitális műtermi megoldások vállalkozóknak és e-commerce márkáknak.</p>
+        <p>Stúdióminőségű társkereső fotók, üzleti portrék és márka-kampányok — fotóstúdió, utazás és feszengés nélkül.<br>Prémium digitális műtermi megoldások magánszemélyeknek és e-commerce vállalkozásoknak.</p>
         <div class="cta-group">
-            <a href="#katalogus" class="btn btn-filled">Modellkatalógus (B2B)</a>
-            <a href="#arak" class="btn">Személyes Portré Csomagok</a>
+            <a href="#arak" class="btn btn-filled">Személyes Portré Csomagok</a>
+            <a href="#katalogus" class="btn">Virtuális Modellkatalógus (B2B)</a>
         </div>
     </header>
 
+    <!-- PORTFÓLIÓ SZEKCIÓ -->
+    <section id="portfolio">
+        <h2>DIGITÁLIS MŰTERMI MUNKÁINK</h2>
+        <p class="section-desc">A saját szelfidből vagy termékedből stúdióminőségű, természetes és eladható képi világot teremtünk.</p>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
+                <img src="images/4.jpg" alt="Saját Szelfi -> Társkereső Profil">
+                <div class="gallery-caption">SZELFI ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
+                <img src="images/1.jpg" alt="Saját Szelfi -> Prémium Glamour">
+                <div class="gallery-caption">SZELFI ➔ PRÉMIUM GLAMOUR</div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
+                <img src="images/5.jpg" alt="Saját Szelfi -> LinkedIn Portré">
+                <div class="gallery-caption">SZELFI ➔ PROFI LINKEDIN PORTRÉ</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
+                <img src="images/3.jpg" alt="Termék -> Életmód Kampány">
+                <div class="gallery-caption">TERMÉK ➔ ÉLETMÓD KAMPÁNYFOTÓ</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://www.instagram.com/pixelgirlsstudio/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 12px 30px;">
+                Instagram: @pixelgirlsstudio
+            </a>
+        </div>
+    </section>
+
     <!-- B2B MODELLKATALÓGUS SZEKCIÓ -->
     <section id="katalogus">
-        <h2>VIRTUÁLIS MODELLKATALÓGUS</h2>
+        <h2>VIRTUÁLIS MODELLKATALÓGUS (B2B)</h2>
         <p class="section-desc">Valódi modellek licencelt karakterei. Életmód-, termék- és divatkampányok hús-vér modellekkel, stúdió- és utazási költségek töredékéért. 100%-ban jogtiszta és etikus.</p>
         
         <div class="roster-grid">
@@ -420,69 +456,58 @@
         </div>
     </section>
 
-    <!-- PORTFÓLIÓ SZEKCIÓ -->
-    <section id="portfolio">
-        <h2>DIGITÁLIS MŰTERMI MUNKÁINK</h2>
-        <p class="section-desc">A saját szelfidből vagy termékedből stúdióminőségű vizuális anyagot teremtünk.</p>
-        <div class="gallery">
-            <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
-                <img src="images/1.jpg" alt="Saját Szelfi -> Prémium Glamour">
-                <div class="gallery-caption">SZELFI ➔ PRÉMIUM GLAMOUR</div>
-            </div>
-            
-            <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
-                <img src="images/5.jpg" alt="Saját Szelfi -> LinkedIn Portré">
-                <div class="gallery-caption">SZELFI ➔ PROFI LINKEDIN PORTRÉ</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
-                <img src="images/3.jpg" alt="Termék -> Életmód Kampány">
-                <div class="gallery-caption">TERMÉK ➔ ÉLETMÓD KAMPÁNYFOTÓ</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
-                <img src="images/4.jpg" alt="Saját Szelfi -> Társkereső Profil">
-                <div class="gallery-caption">SZELFI ➔ TERMÉSZETES PROFILEKÉP</div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="https://www.instagram.com/pixelgirlsstudio/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 12px 30px;">
-                Instagram: @pixelgirlsstudio
-            </a>
-        </div>
-    </section>
-
     <!-- ÁRLISTA SZEKCIÓ -->
     <section id="arak">
         <h2>CSOMAGOK ÉS BEFEKTETÉS</h2>
         <p class="section-desc">Kiszámítható árak, rejtett költségek és utazási feszengés nélkül.</p>
         
         <div class="pricing-container">
-            <div class="price-card">
-                <h3>ÜZLETI & LINKEDIN CSOMAG</h3>
-                <div class="price-main">35.000 Ft</div>
-                <ul class="price-details">
-                    <li><strong>5 db</strong> prémium stúdióminőségű portré</li>
-                    <li>Természetes, hiteles arcvonások megtartása</li>
-                    <li>Irodai vagy urbánus stúdióháttér</li>
-                    <li>Nagyfelbontású, nyomdakész fájlok</li>
-                    <li>Vízjelezett előnézet jóváhagyásra</li>
-                </ul>
-                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem;">Portré rendelése</a>
+            <!-- TÁRSKERESŐ CSOMAG -->
+            <div class="price-card featured">
+                <div>
+                    <h3>TÁRSKERESŐ & EROTIKA</h3>
+                    <div class="price-main">35.000 Ft</div>
+                    <ul class="price-details">
+                        <li><strong>6 db</strong> természetes, vonzó profilkép</li>
+                        <li>Tinder, Bumble vagy OnlyFans stílusra szabva</li>
+                        <li>Előnyös megvilágítás és háttér</li>
+                        <li>100% diszkréció és anonimitás opció</li>
+                        <li>Vízjelezett előnézet jóváhagyásra</li>
+                    </ul>
+                </div>
+                <a href="#kapcsolat" class="btn btn-filled" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Profilképek Rendelése</a>
             </div>
 
-            <div class="price-card featured">
-                <h3>B2B MÁRKA KAMPÁNY CSOMAG</h3>
-                <div class="price-main">89.000 Ft-tól</div>
-                <ul class="price-details">
-                    <li><strong>10 db</strong> életmód/termékkampány fotó</li>
-                    <li>Valódi, licencelt virtuális modell használata</li>
-                    <li>Egyedi helyszín és világítás beállítása</li>
-                    <li>100%-ban jogtiszta kereskedelmi licensz</li>
-                    <li>Rugalmas kiegészítési opciók</li>
-                </ul>
-                <a href="#kapcsolat" class="btn btn-filled" style="padding: 12px 25px; font-size: 0.8rem;">B2B Ajánlatkérés</a>
+            <!-- ÜZLETI CSOMAG -->
+            <div class="price-card">
+                <div>
+                    <h3>ÜZLETI & LINKEDIN</h3>
+                    <div class="price-main">35.000 Ft</div>
+                    <ul class="price-details">
+                        <li><strong>5 db</strong> prémium stúdióminőségű portré</li>
+                        <li>Természetes, hiteles arcvonások megtartása</li>
+                        <li>Irodai vagy urbánus stúdióháttér</li>
+                        <li>Nagyfelbontású, nyomdakész fájlok</li>
+                        <li>Vízjelezett előnézet jóváhagyásra</li>
+                    </ul>
+                </div>
+                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Portré Rendelése</a>
+            </div>
+
+            <!-- B2B CSOMAG -->
+            <div class="price-card">
+                <div>
+                    <h3>B2B MÁRKA KAMPÁNY</h3>
+                    <div class="price-main">89.000 Ft-tól</div>
+                    <ul class="price-details">
+                        <li><strong>10 db</strong> életmód/termékkampány fotó</li>
+                        <li>Valódi, licencelt virtuális modell használata</li>
+                        <li>Egyedi helyszín és világítás beállítása</li>
+                        <li>100%-ban jogtiszta kereskedelmi licensz</li>
+                        <li>Rugalmas kiegészítési opciók</li>
+                    </ul>
+                </div>
+                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">B2B Ajánlatkérés</a>
             </div>
         </div>
     </section>
@@ -492,16 +517,16 @@
         <h2>MIÉRT A PIXEL-GIRLS DIGITÁLIS MŰTEREM?</h2>
         <div class="features">
             <div class="feature-box">
-                <h3>ETHICAL & JOGTISZTA</h3>
-                <p>Modelljeink valódi emberek, akik modellszerződéssel és licencdíjas alapon adják karakterüket a digitális fotózáshoz. A B2B márkák így teljes jogi biztonságot élveznek.</p>
+                <h3>100% DISZKRÉCIÓ & ANONYMITY</h3>
+                <p>Nincs szükség személyes találkozásra. Magánszemélyként teljes diszkréciót garantálunk. Ha szükséges, az egyedi azonosító jegyeket is finomítjuk vagy eltüntetjük a képekről.</p>
             </div>
             <div class="feature-box">
                 <h3>KÖLTSÉG- ÉS IDŐTAKARÉKOS</h3>
                 <p>Nincs szükség stúdióbérlésre, utazásra, sminkesre vagy órákig tartó feszengésre a kamera előtt. Ráadásul a hagyományos fotózási büdzsé töredékéből dolgozunk.</p>
             </div>
             <div class="feature-box">
-                <h3>TERMÉSZETES EREDMÉNY</h3>
-                <p>Személyes portréknál nem alakítjuk át felismerhetetlenné az arcodat. Megőrizzük az egyedi vonásaidat, miközben a megvilágítást és a környezetet profi stúdió szintre emeljük.</p>
+                <h3>ETHICAL & JOGTISZTA</h3>
+                <p>Modelljeink valódi emberek, akik modellszerződéssel és licencdíjas alapon adják karakterüket a digitális fotózáshoz. A B2B márkák így teljes jogi biztonságot élveznek.</p>
             </div>
         </div>
     </section>
