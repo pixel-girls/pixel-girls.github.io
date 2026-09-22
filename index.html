@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Pixel-Girls | Digitális Műterem & Virtuális Modellügynökség</title>
-    <meta name="description" content="Pixel-Girls Studio - Prémium hibrid digitális műterem. Társkereső profilfotók, üzleti LinkedIn portrék és licencelt virtuális modellek márkáknak.">
+    <title>Pixel-Girls | Hibrid Digitális Műterem & Modellügynökség</title>
+    <meta name="description" content="Pixel-Girls Studio - Prémium digitális műterem. Stúdióminőségű társkereső profilfotók, üzleti LinkedIn portrék és virtuális modellkampányok cégeknek.">
     <meta name="keywords" content="társkereső profilfotó, Tinder fotó, üzleti portré, virtuális modellügynökség, digitális műterem, e-commerce fotózás, Pixel-Girls">
     <meta name="author" content="Pixel-Girls Studio">
     <meta name="google-site-verification" content="IDE-MÁSOLD-A-GOOGLE-KÓDOT" />
 
-    <meta property="og:title" content="Pixel-Girls | Digitális Műterem & Virtuális Modellügynökség">
-    <meta property="og:description" content="Stúdióminőségű társkereső képek, üzleti portrék és kampányfotók fotóstúdió és utazás nélkül. Valódi modellek, 100% diszkréció.">
+    <meta property="og:title" content="Pixel-Girls | Hibrid Digitális Műterem & Modellügynökség">
+    <meta property="og:description" content="Stúdióminőségű portrék és márka-kampányok fotóstúdió és utazás nélkül. Valódi modellek, 100% diszkréció.">
     <meta property="og:image" content="images/pixelgirlsbanner.jpeg">
     <meta property="og:url" content="https://pixel-girls.github.io/">
     <meta property="og:type" content="website">
@@ -143,7 +143,7 @@
         }
 
         section {
-            padding: 80px 20px;
+            padding: 70px 20px;
             max-width: 1100px;
             margin: auto;
         }
@@ -159,9 +159,45 @@
         .section-desc {
             text-align: center;
             max-width: 750px;
-            margin: 0 auto 50px;
+            margin: 0 auto 40px;
             color: #aaa;
             font-size: 1rem;
+        }
+
+        /* --- 3 LÉPÉS BLOKK --- */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .step-card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            padding: 30px 20px;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .step-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .step-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         /* --- GALÉRIA --- */
@@ -273,7 +309,7 @@
         .price-card h3 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
@@ -299,7 +335,6 @@
             padding-bottom: 6px;
         }
 
-        /* --- TÁRSOLDALAK --- */
         .partner-links {
             text-align: center;
             border-top: 1px solid #222;
@@ -329,7 +364,6 @@
             color: var(--primary-color);
         }
 
-        /* --- SZOLGÁLTATÁSOK --- */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -382,38 +416,64 @@
     </div>
 
     <header>
-        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">A hibrid fotóművészet új korszaka</p>
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary-color);">Stúdióminőségű fotózás utazás és feszengés nélkül</p>
         <h1>PIXEL-GIRLS</h1>
-        <p>Stúdióminőségű társkereső fotók, üzleti portrék és márka-kampányok — fotóstúdió, utazás és feszengés nélkül.<br>Prémium digitális műtermi megoldások magánszemélyeknek és e-commerce vállalkozásoknak.</p>
+        <p>A saját karakteredből és megfelelő minőségű meglévő fotóidból építünk stúdióminőségű képeket.<br>Vonzó társkereső profilok, üzleti LinkedIn portrék és modell-kampányok cégeknek.</p>
         <div class="cta-group">
-            <a href="#arak" class="btn btn-filled">Személyes Portré Csomagok</a>
-            <a href="#katalogus" class="btn">Virtuális Modellkatalógus (B2B)</a>
+            <a href="#arak" class="btn btn-filled">Fotócsomagok & Árak</a>
+            <a href="#hogyan" class="btn">A folyamat lépései</a>
         </div>
     </header>
 
+    <!-- FOLYAMAT LÉPÉSEI -->
+    <section id="hogyan">
+        <h2>A FOLYAMAT LÉPÉSEI</h2>
+        <p class="section-desc">Fotóművészeti precizitás és kényelem. Nem kell stúdióba utaznod és a kamera előtt állnod.</p>
+        
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>MEGFELELŐ REFERENCIAKÉPEK</h3>
+                <p>Bekérünk tőled néhány jó minőségű, éles fotót az arcodról a pontos digitális karaktermodellezéshez.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>STÍLUS ÉS HANGULAT</h3>
+                <p>Kiválasztjuk a célodhoz illő stílust: magabiztos Tinder-profil, irodai üzleti portré vagy modellkampány.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>KÉSZ MŰTERMI FOTÓK</h3>
+                <p>Elkészítjük a végleges, nagyfelbontású sorozatot. Csak akkor fizetsz, ha a vízjelezett minta elnyerte a tetszésedet!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- PORTFÓLIÓ SZEKCIÓ -->
     <section id="portfolio">
-        <h2>DIGITÁLIS MŰTERMI MUNKÁINK</h2>
-        <p class="section-desc">A saját szelfidből vagy termékedből stúdióminőségű, természetes és eladható képi világot teremtünk.</p>
+        <h2>MŰTERMI MUNKÁINK ÉS STÍLUSOK</h2>
+        <p class="section-desc">Megőrizzük az eredeti, természetes arcvonásaidat, miközben a megvilágítást és a környezetet prémium szintre emeljük.</p>
         <div class="gallery">
             <div class="gallery-item" onclick="openLightbox('images/4.jpg')">
-                <img src="images/4.jpg" alt="Saját Szelfi -> Társkereső Profil">
-                <div class="gallery-caption">SZELFI ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
+                <img src="images/4.jpg" alt="Saját Fotók -> Társkereső Profil">
+                <div class="gallery-caption">REKLÁM ➔ VONZÓ TÁRSKERESŐ PROFIL</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox('images/1.jpg')">
-                <img src="images/1.jpg" alt="Saját Szelfi -> Prémium Glamour">
-                <div class="gallery-caption">SZELFI ➔ PRÉMIUM GLAMOUR</div>
+                <img src="images/1.jpg" alt="Saját Fotók -> Prémium Glamour">
+                <div class="gallery-caption">REKLÁM ➔ STÍLUSOS GLAMOUR / BOUDOIR</div>
             </div>
             
             <div class="gallery-item" onclick="openLightbox('images/5.jpg')">
-                <img src="images/5.jpg" alt="Saját Szelfi -> LinkedIn Portré">
-                <div class="gallery-caption">SZELFI ➔ PROFI LINKEDIN PORTRÉ</div>
+                <img src="images/5.jpg" alt="Saját Fotók -> LinkedIn Portré">
+                <div class="gallery-caption">REKLÁM ➔ PROFI ÜZLETI PORTRÉ</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox('images/3.jpg')">
                 <img src="images/3.jpg" alt="Termék -> Életmód Kampány">
-                <div class="gallery-caption">TERMÉK ➔ ÉLETMÓD KAMPÁNYFOTÓ</div>
+                <div class="gallery-caption">TERMÉK ➔ MODELLFOTÓ WEBSHOPOKNAK</div>
             </div>
         </div>
 
@@ -424,34 +484,34 @@
         </div>
     </section>
 
-    <!-- B2B MODELLKATALÓGUS SZEKCIÓ -->
+    <!-- MODELLKATALÓGUS SZEKCIÓ (CÉGEKNEK) -->
     <section id="katalogus">
-        <h2>VIRTUÁLIS MODELLKATALÓGUS (B2B)</h2>
-        <p class="section-desc">Valódi modellek licencelt karakterei. Életmód-, termék- és divatkampányok hús-vér modellekkel, stúdió- és utazási költségek töredékéért. 100%-ban jogtiszta és etikus.</p>
+        <h2>MODELLKATALÓGUS MÁRKÁKNAK ÉS WEBSHOPOKNAK</h2>
+        <p class="section-desc">Szeretnél modellt a terméked mellé? Válassz valódi modelljeink közül, és elkészítjük a reklámfotódat drága stúdió- és modellbérlés nélkül! 100%-ban jogtiszta.</p>
         
         <div class="roster-grid">
             <div class="roster-card">
                 <img src="images/1.jpg" alt="Virtuális Modell 1" onclick="openLightbox('images/1.jpg')">
-                <span class="roster-tag">Klasszikus Elegancia & Glamour</span>
-                <h3>Anna – Licencelt Karakter</h3>
-                <p>Ideális prémium ékszerek, kozmetikumok és estélyi kollekciók bemutatására.</p>
-                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Kampány tervezése</a>
+                <span class="roster-tag">Elegancia & Ékszerek</span>
+                <h3>Anna – Licencelt Modell</h3>
+                <p>Ideális ékszerekhez, kozmetikumokhoz és elegáns ruhákhoz.</p>
+                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Ajánlatkérés ehhez a modellhez</a>
             </div>
 
             <div class="roster-card">
                 <img src="images/3.jpg" alt="Virtuális Modell 2" onclick="openLightbox('images/3.jpg')">
-                <span class="roster-tag">UGC & Városi Életmód</span>
-                <h3>Zsófi – Licencelt Karakter</h3>
-                <p>Tökéletes választás ruházati márkáknak, kiegészítőknek és közösségi média kampányokhoz.</p>
-                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Kampány tervezése</a>
+                <span class="roster-tag">Ruházat & Kiegészítők</span>
+                <h3>Zsófi – Licencelt Modell</h3>
+                <p>Tökéletes választás divatmárkáknak, táskáknak és közösségi médiára.</p>
+                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Ajánlatkérés ehhez a modellhez</a>
             </div>
 
             <div class="roster-card">
                 <img src="images/5.jpg" alt="Virtuális Modell 3" onclick="openLightbox('images/5.jpg')">
-                <span class="roster-tag">Üzleti & Karrier</span>
-                <h3>Márk – Licencelt Karakter</h3>
-                <p>B2B szolgáltatások, órák és prémium férfi kiegészítők hiteles megjelenítésére.</p>
-                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Kampány tervezése</a>
+                <span class="roster-tag">Üzleti & Férfi Cikkek</span>
+                <h3>Márk – Licencelt Modell</h3>
+                <p>Órák, öltönyök és férfi kiegészítők hiteles bemutatására.</p>
+                <a href="#kapcsolat" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Ajánlatkérés ehhez a modellhez</a>
             </div>
         </div>
     </section>
@@ -459,52 +519,52 @@
     <!-- ÁRLISTA SZEKCIÓ -->
     <section id="arak">
         <h2>CSOMAGOK ÉS BEFEKTETÉS</h2>
-        <p class="section-desc">Kiszámítható árak, rejtett költségek és utazási feszengés nélkül.</p>
+        <p class="section-desc">Kiszámítható árak. Csak akkor fizetsz, ha elégedett vagy a vízjelezett mintával!</p>
         
         <div class="pricing-container">
             <!-- TÁRSKERESŐ CSOMAG -->
             <div class="price-card featured">
                 <div>
-                    <h3>TÁRSKERESŐ & EROTIKA</h3>
+                    <h3>TÁRSKERESŐ PROFIL CSOMAG</h3>
                     <div class="price-main">35.000 Ft</div>
                     <ul class="price-details">
                         <li><strong>6 db</strong> természetes, vonzó profilkép</li>
-                        <li>Tinder, Bumble vagy OnlyFans stílusra szabva</li>
-                        <li>Előnyös megvilágítás és háttér</li>
-                        <li>100% diszkréció és anonimitás opció</li>
+                        <li>Tinder, Bumble vagy egyéb profilra szabva</li>
+                        <li>Előnyös megvilágítás és stílusos környezet</li>
+                        <li>100% diszkréció (garantált adatvédelem)</li>
                         <li>Vízjelezett előnézet jóváhagyásra</li>
                     </ul>
                 </div>
-                <a href="#kapcsolat" class="btn btn-filled" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Profilképek Rendelése</a>
+                <a href="#kapcsolat" class="btn btn-filled" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Társkereső Képek Rendelése</a>
             </div>
 
             <!-- ÜZLETI CSOMAG -->
             <div class="price-card">
                 <div>
-                    <h3>ÜZLETI & LINKEDIN</h3>
+                    <h3>PROFI LINKEDIN / ÜZLETI PORTRÉ</h3>
                     <div class="price-main">35.000 Ft</div>
                     <ul class="price-details">
                         <li><strong>5 db</strong> prémium stúdióminőségű portré</li>
-                        <li>Természetes, hiteles arcvonások megtartása</li>
-                        <li>Irodai vagy urbánus stúdióháttér</li>
-                        <li>Nagyfelbontású, nyomdakész fájlok</li>
+                        <li>Természetes, bizalomkeltő megjelenés</li>
+                        <li>Irodai vagy elegáns városháttér</li>
+                        <li>Nagyfelbontású képek önéletrajzhoz és LinkedInhez</li>
                         <li>Vízjelezett előnézet jóváhagyásra</li>
                     </ul>
                 </div>
-                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Portré Rendelése</a>
+                <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">Üzleti Portré Rendelése</a>
             </div>
 
             <!-- B2B CSOMAG -->
             <div class="price-card">
                 <div>
-                    <h3>B2B MÁRKA KAMPÁNY</h3>
+                    <h3>REKLÁMFOTÓ WEBSHOPOKNAK</h3>
                     <div class="price-main">89.000 Ft-tól</div>
                     <ul class="price-details">
-                        <li><strong>10 db</strong> életmód/termékkampány fotó</li>
-                        <li>Valódi, licencelt virtuális modell használata</li>
-                        <li>Egyedi helyszín és világítás beállítása</li>
-                        <li>100%-ban jogtiszta kereskedelmi licensz</li>
-                        <li>Rugalmas kiegészítési opciók</li>
+                        <li><strong>10 db</strong> modell- vagy életmód kampányfotó</li>
+                        <li>Választható modell a katalógusunkból</li>
+                        <li>A te terméked a modell kezében / testén</li>
+                        <li>Kereskedelmi célra szabadon felhasználható</li>
+                        <li>Rugalmas csomagajánlatok cégeknek</li>
                     </ul>
                 </div>
                 <a href="#kapcsolat" class="btn" style="padding: 12px 25px; font-size: 0.8rem; margin-top: 15px;">B2B Ajánlatkérés</a>
@@ -517,35 +577,35 @@
         <h2>MIÉRT A PIXEL-GIRLS DIGITÁLIS MŰTEREM?</h2>
         <div class="features">
             <div class="feature-box">
-                <h3>100% DISZKRÉCIÓ & ANONYMITY</h3>
-                <p>Nincs szükség személyes találkozásra. Magánszemélyként teljes diszkréciót garantálunk. Ha szükséges, az egyedi azonosító jegyeket is finomítjuk vagy eltüntetjük a képekről.</p>
+                <h3>100% DISZKRÉCIÓ</h3>
+                <p>Személyes találkozó nélkül dolgozunk. Képeidet és adataidat szigorúan bizalmasan kezeljük, és harmadik félnek nem adjuk ki.</p>
             </div>
             <div class="feature-box">
-                <h3>KÖLTSÉG- ÉS IDŐTAKARÉKOS</h3>
-                <p>Nincs szükség stúdióbérlésre, utazásra, sminkesre vagy órákig tartó feszengésre a kamera előtt. Ráadásul a hagyományos fotózási büdzsé töredékéből dolgozunk.</p>
+                <h3>IDŐ ÉS KÖLTSÉGTAKARÉKOS</h3>
+                <p>Megspórolod a stúdióbérlés, az utazás, a sminkes és az órákig tartó feszengés költségét és fáradtságát.</p>
             </div>
             <div class="feature-box">
-                <h3>ETHICAL & JOGTISZTA</h3>
-                <p>Modelljeink valódi emberek, akik modellszerződéssel és licencdíjas alapon adják karakterüket a digitális fotózáshoz. A B2B márkák így teljes jogi biztonságot élveznek.</p>
+                <h3>KOCKÁZATMENTES GARANCIA</h3>
+                <p>Először elkészítjük a mintákat, és elküldjük jóváhagyásra. Csak akkor fizetsz, ha elégedett vagy az eredménnyel.</p>
             </div>
         </div>
     </section>
 
     <!-- KAPCSOLAT ÉS TÁRSOLDALAK -->
     <section id="kapcsolat" style="text-align: center;">
-        <h2>INDÍTSUK EL A PROJEKTET!</h2>
-        <p class="section-desc">Írd meg nekünk az elképzelésedet, és 24 órán belül felvesszük veled a kapcsolatot.</p>
+        <h2>KÉSZEN ÁLLSZ A PROFI FOTÓKRA?</h2>
+        <p class="section-desc">Lépj velünk kapcsolatba e-mailben, és tájékoztatunk a megrendelés pontos menetéről!</p>
         <a href="mailto:pixelgirlsstudio@gmail.com" class="btn btn-filled">Kapcsolatfelvétel & Ajánlatkérés</a>
         
         <div class="partner-links">
-            <p>Amennyiben hagyományos, analóg stúdiófotózást keresel, látogasd meg partneroldalainkat:</p>
+            <p>Hagyományos, analóg stúdiófotózást szeretnél? Tekintsd meg partneroldalainkat:</p>
             <a href="https://centaur.hu" target="_blank" class="partner-btn">Centaur Photography</a>
             <a href="https://www.sincitystudio.hu" target="_blank" class="partner-btn">Sin City Stúdió</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 PIXEL-GIRLS STUDIO | Hibrid Digitális Műterem. Minden jog fenntartva.</p>
+        <p>&copy; 2026 PIXEL-GIRLS STUDIO | Minden jog fenntartva.</p>
         <p><a href="aszf.html">Általános Szerződési Feltételek (ÁSZF)</a></p>
     </footer>
 
