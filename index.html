@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -274,5 +273,1825 @@
         }
 
         .btn:hover {
-            backgr
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 20px rgba(230,177,46,0.3);
+        }
+
+        .hero-note {
+            margin: 25px auto 0;
+            color: #777;
+            font-size: 0.8rem;
+            max-width: 650px;
+        }
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 85px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-dark {
+            max-width: none;
+            background: #080808;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            line-height: 1.15;
+            margin: 0 0 16px;
+        }
+
+        .section-kicker {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.72rem;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 48px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* =====================================================
+           AUDIENCE CARDS
+        ===================================================== */
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .audience-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 34px 28px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .audience-number {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+        }
+
+        .audience-card h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin: 0 0 12px;
+        }
+
+        .audience-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .mini-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .step-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .step-card p {
+            color: #888;
+            font-size: 0.84rem;
+            margin: 0;
+        }
+
+        /* =====================================================
+           PORTFOLIO
+        ===================================================== */
+
+        .portfolio-section {
+            background: #080808;
+            max-width: none;
+        }
+
+        .gallery {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: zoom-in;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0.95) contrast(1.05);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+        }
+
+        /* =====================================================
+           B2B INTRO
+        ===================================================== */
+
+        .b2b-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .b2b-intro h2 {
+            text-align: left;
+        }
+
+        .b2b-intro-text {
+            color: #aaa;
+            font-size: 1.05rem;
+        }
+
+        .b2b-intro-text strong {
+            color: #fff;
+        }
+
+        .b2b-tag {
+            display: inline-block;
+            color: var(--primary-color);
+            border: 1px solid rgba(230,177,46,0.35);
+            padding: 7px 12px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .b2b-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 28px;
+        }
+
+        .b2b-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 0 0 10px;
+        }
+
+        .b2b-card p {
+            color: #888;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* =====================================================
+           MODEL CATALOGUE
+        ===================================================== */
+
+        .catalogue-section {
+            background: #050505;
+            max-width: none;
+        }
+
+        .roster-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .roster-card {
+            background: #0c0c0c;
+            border: 1px solid #222;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .roster-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+
+        .roster-card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            margin-bottom: 18px;
+            border: 1px solid #333;
+            cursor: zoom-in;
+        }
+
+        .roster-card h3 {
+            margin: 5px 0 8px;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+        }
+
+        .roster-tag {
+            font-size: 0.7rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .roster-card p {
+            font-size: 0.83rem;
+            color: #888;
+            margin-bottom: 18px;
+        }
+
+        .catalogue-note {
+            max-width: 850px;
+            margin: 35px auto 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.78rem;
+        }
+
+        /* =====================================================
+           PRICING
+        ===================================================== */
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .price-card.featured {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 30px rgba(230,177,46,0.15);
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #000;
+            padding: 5px 10px;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .price-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .price-main {
+            font-size: 2.15rem;
+            font-weight: 700;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        .price-sub {
+            color: #666;
+            font-size: 0.75rem;
+            margin-top: -8px;
+        }
+
+        .price-details {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            color: #ccc;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+
+        .price-details li {
+            margin: 10px 0;
+            border-bottom: 1px solid #222;
+            padding-bottom: 7px;
+        }
+
+        .price-details li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* =====================================================
+           WHY
+        ===================================================== */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: #0d0d0d;
+            padding: 32px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .feature-box h3 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .feature-box p {
+            color: #888;
+            font-size: 0.87rem;
+            margin: 0;
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(230,177,46,0.08),
+                    transparent 55%
+                ),
+                #050505;
+            border-top: 1px solid #171717;
+        }
+
+        .final-cta h2 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #aaa;
+        }
+
+        .email {
+            display: block;
+            margin-top: 22px;
+            color: #777;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .email:hover {
+            color: var(--primary-color);
+        }
+
+        /* =====================================================
+           PARTNER LINKS
+        ===================================================== */
+
+        .partner-links {
+            max-width: 800px;
+            margin: 55px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        .partner-links p {
+            font-size: 0.88rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .partner-btn {
+            display: inline-block;
+            margin: 6px;
+            padding: 10px 18px;
+            border: 1px solid #444;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: 0.3s;
+        }
+
+        .partner-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            text-align: center;
+            padding: 45px 20px;
+            background: #000;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.78rem;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .audience-grid,
+            .b2b-grid,
+            .roster-grid,
+            .pricing-container,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .b2b-intro {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .b2b-intro h2 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-inner {
+                min-height: 60px;
+            }
+
+            .hero {
+                padding: 55px 18px 70px;
+            }
+
+            .hero h1 {
+                letter-spacing: 3px;
+            }
+
+            .hero h1 span {
+                letter-spacing: 2px;
+            }
+
+            .hero-lead {
+                font-size: 0.95rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-group .btn {
+                text-align: center;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .roster-card img {
+                height: auto;
+                max-height: 480px;
+            }
+
+            .price-main {
+                font-size: 2rem;
+            }
+
+            #lightbox {
+                padding: 15px;
+            }
+
+            #lightbox img {
+                max-width: 96%;
+                max-height: 85%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div id="lightbox" onclick="closeLightbox()">
+
+    <span id="lightbox-close">&times;</span>
+
+    <img id="lightbox-img"
+         src=""
+         alt="Pixel-Girls nagyított kép">
+
+</div>
+
+
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
+<div class="top-photo-container"
+     onclick="openLightbox('images/pixelgirlsbanner.jpeg')">
+
+    <img src="images/pixelgirlsbanner.jpeg"
+         alt="Pixel-Girls Cover Photo">
+
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="main-nav">
+
+    <div class="nav-inner">
+
+        <a href="#" class="nav-logo">
+            PIXEL-GIRLS
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#maganszemely">
+                Magánszemélyek
+            </a>
+
+            <a href="#cegek">
+                Cégeknek
+            </a>
+
+            <a href="#katalogus">
+                Modellek
+            </a>
+
+            <a href="#arak">
+                Árak
+            </a>
+
+            <a href="#kapcsolat"
+               class="nav-cta">
+                Ajánlatkérés
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-eyebrow">
+        Hibrid digitális műterem & modellügynökség
+    </div>
+
+    <h1>
+        PROFESSIONÁLIS FOTÓK.
+        <span>FOTÓZÁS NÉLKÜL.</span>
+    </h1>
+
+    <p class="hero-lead">
+
+        A saját fotóidból vagy valódi, licencelt modelljeinkből
+        készítünk <strong>stúdióminőségű képeket</strong> —
+        mesterséges intelligenciával, fotográfiai szemlélettel
+        és professzionális utómunkával.
+
+    </p>
+
+    <div class="cta-group">
+
+        <a href="#maganszemely"
+           class="btn btn-filled">
+            MAGAMNAK SZERETNÉK KÉPEKET
+        </a>
+
+        <a href="#cegek"
+           class="btn">
+            CÉGES KAMPÁNYT SZERETNÉK
+        </a>
+
+    </div>
+
+    <p class="hero-note">
+
+        Nincs stúdió. Nincs utazás. Nincs fotózási nap.
+        <br>
+        Te adod a fotókat. Mi elkészítjük a képeket.
+
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     KINEK?
+===================================================== -->
+
+<section id="maganszemely">
+
+    <div class="section-kicker">
+        Egy technológia. Több megoldás.
+    </div>
+
+    <h2>
+        Mire van szükséged?
+    </h2>
+
+    <p class="section-desc">
+
+        Nem kell fotózásra menned ahhoz, hogy professzionális
+        képeid legyenek.
+
+    </p>
+
+
+    <div class="audience-grid">
+
+
+        <div class="audience-card">
+
+            <div class="audience-number">
+                01
+            </div>
+
+            <h3>
+                Társkereső profil
+            </h3>
+
+            <p>
+                Természetes, vonzó és változatos profilképek
+                Tinderre, Bumble-re vagy más társkereső
+                platformokra.
+            </p>
+
+            <a href="#arak"
+               class="mini-link">
+                TÁRSKERESŐ CSOMAG →
+            </a>
+
+        </div>
+
+
+        <div class="audience-card">
+
+            <div class="audience-number">
+                02
+            </div>
+
+            <h3>
+                LinkedIn & üzleti portré
+            </h3>
+
+            <p>
+                Professzionális portrék LinkedInhez,
+                önéletrajzhoz, weboldalhoz vagy személyes
+                márkaépítéshez.
+            </p>
+
+            <a href="#arak"
+               class="mini-link">
+                ÜZLETI CSOMAG →
+            </a>
+
+        </div>
+
+
+        <div class="audience-card">
+
+            <div class="audience-number">
+                03
+            </div>
+
+            <h3>
+                Reklám & kampány
+            </h3>
+
+            <p>
+                Termékedből és választott digitális modellből
+                teljes kampányvizuált készítünk.
+            </p>
+
+            <a href="#cegek"
+               class="mini-link">
+                CÉGES MEGOLDÁSOK →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOLYAMAT
+===================================================== -->
+
+<section class="section-dark"
+         id="hogyan">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Egyszerű folyamat
+        </div>
+
+        <h2>
+            FOTÓZÁS HELYETT<br>
+            DIGITÁLIS PRODUKCIÓ
+        </h2>
+
+        <p class="section-desc">
+
+            Fotóművészeti precizitás és kényelem.
+            Nincs stúdióba utazás, nincs fotózási nap,
+            nincs felesleges szervezés.
+
+        </p>
+
+
+        <div class="steps-container">
+
+
+            <div class="step-card">
+
+                <div class="step-num">
+                    01
+                </div>
+
+                <h3>
+                    REFERENCIAFOTÓK
+                </h3>
+
+                <p>
+                    Elküdöd a megfelelő minőségű
+                    saját fotóidat, illetve céges ügyfélként
+                    a terméked fotóit.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-num">
+                    02
+                </div>
+
+                <h3>
+                    STÍLUS & KONCEPCIÓ
+                </h3>
+
+                <p>
+                    Meghatározzuk a kívánt stílust,
+                    környezetet, ruházatot, hangulatot
+                    és képi világot.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-num">
+                    03
+                </div>
+
+                <h3>
+                    DIGITÁLIS GYÁRTÁS
+                </h3>
+
+                <p>
+                    Elkészítjük a képeket mesterséges
+                    intelligenciával, fotográfiai kontrollal
+                    és utómunkával.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-num">
+                    04
+                </div>
+
+                <h3>
+                    JÓVÁHAGYÁS & ÁTADÁS
+                </h3>
+
+                <p>
+                    Vízjelezett előnézet után átadjuk
+                    a végleges, nagyfelbontású képeket.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PORTFÓLIÓ
+===================================================== -->
+
+<section class="portfolio-section"
+         id="portfolio">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Portfólió
+        </div>
+
+        <h2>
+            EGY FOTÓBÓL<br>
+            TELJES VIZUÁLIS VILÁG
+        </h2>
+
+        <p class="section-desc">
+
+            Megőrizzük az eredeti, természetes karaktert,
+            miközben a megvilágítást, környezetet,
+            stylingot és képi világot prémium szintre emeljük.
+
+        </p>
+
+
+        <div class="gallery">
+
+
+            <div class="gallery-item"
+                 onclick="openLightbox('images/4.jpg')">
+
+                <img src="images/4.jpg"
+                     alt="Saját fotó - társkereső profil">
+
+                <div class="gallery-caption">
+                    SAJÁT FOTÓ ➔ VONZÓ TÁRSKERESŐ PROFIL
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item"
+                 onclick="openLightbox('images/1.jpg')">
+
+                <img src="images/1.jpg"
+                     alt="Saját fotó - glamour">
+
+                <div class="gallery-caption">
+                    SAJÁT FOTÓ ➔ PRÉMIUM GLAMOUR / BOUDOIR
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item"
+                 onclick="openLightbox('images/5.jpg')">
+
+                <img src="images/5.jpg"
+                     alt="Saját fotó - üzleti portré">
+
+                <div class="gallery-caption">
+                    SAJÁT FOTÓ ➔ PROFI ÜZLETI PORTRÉ
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item"
+                 onclick="openLightbox('images/3.jpg')">
+
+                <img src="images/3.jpg"
+                     alt="Termék - modell kampány">
+
+                <div class="gallery-caption">
+                    TERMÉK ➔ MODELLKAMPÁNY WEBSHOPOKNAK
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align:center; margin-top:40px;">
+
+            <a href="https://www.instagram.com/pixelgirlsstudio/"
+               target="_blank"
+               rel="noopener"
+               class="btn">
+
+                INSTAGRAM: @PIXELGIRLSSTUDIO
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     B2B
+===================================================== -->
+
+<section class="section-dark"
+         id="cegek">
+
+    <div class="section-inner">
+
+        <div class="b2b-intro">
+
+            <div>
+
+                <div class="b2b-tag">
+                    Pixel-Girls for Brands
+                </div>
+
+                <h2>
+                    A TERMÉKEDHEZ<br>
+                    NEM FELTÉTLENÜL<br>
+                    KELL FOTÓZÁS.
+                </h2>
+
+            </div>
+
+
+            <div class="b2b-intro-text">
+
+                <p>
+                    <strong>
+                        Termék + digitális modell + kreatív koncepció.
+                    </strong>
+                </p>
+
+                <p>
+                    Egyetlen fotózás helyett komplett digitális
+                    kampánytartalmat készítünk webshopoknak,
+                    márkáknak és reklámkampányokhoz.
+                </p>
+
+                <p>
+                    A cél nem „AI-képek gyártása”, hanem
+                    használható, kampányképes vizuális tartalom.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="b2b-grid">
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Ékszer & óra
+                </h3>
+
+                <p>
+                    Prémium lifestyle, editorial és modellképek
+                    ékszerekhez, órákhoz és kiegészítőkhöz.
+                </p>
+
+            </div>
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Divat
+                </h3>
+
+                <p>
+                    Ruhák, táskák, cipők és kiegészítők
+                    digitális modelleken, változatos környezetben.
+                </p>
+
+            </div>
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Beauty & parfüm
+                </h3>
+
+                <p>
+                    Kozmetikumok és parfümök kampányképei
+                    stúdiófotózás nélkül.
+                </p>
+
+            </div>
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Webshop
+                </h3>
+
+                <p>
+                    Termékoldalakhoz, bannerekhez és
+                    online kampányokhoz használható tartalom.
+                </p>
+
+            </div>
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Hirdetések
+                </h3>
+
+                <p>
+                    Több kreatív egyetlen kampányhoz,
+                    különböző képarányokkal és vizuális irányokkal.
+                </p>
+
+            </div>
+
+
+            <div class="b2b-card">
+
+                <h3>
+                    Egyedi kampány
+                </h3>
+
+                <p>
+                    A koncepciótól a kész kampányképekig
+                    végigvisszük a teljes digitális produkciót.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align:center; margin-top:42px;">
+
+            <a href="mailto:pixelgirlsstudio@gmail.com?subject=Pixel-Girls B2B kampány ajánlatkérés"
+               class="btn btn-filled">
+
+                B2B AJÁNLATOT KÉREK
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODEL CATALOGUE
+===================================================== -->
+
+<section class="catalogue-section"
+         id="katalogus">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Digitális modellügynökség
+        </div>
+
+        <h2>
+            VÁLASSZ VALÓDI MODELLBŐL<br>
+            DIGITÁLIS KARAKTERT
+        </h2>
+
+        <p class="section-desc">
+
+            Nem véletlenszerű AI-arcot választasz.
+            Valódi modelljeink digitális karakterei közül
+            választhatsz, majd ezekkel készítjük el
+            a márkád kampányképeit.
+
+        </p>
+
+
+        <div class="roster-grid">
+
+
+            <div class="roster-card">
+
+                <img src="images/1.jpg"
+                     alt="Anna - licencelt digitális modell"
+                     onclick="openLightbox('images/1.jpg')">
+
+                <span class="roster-tag">
+                    Elegancia & Ékszerek
+                </span>
+
+                <h3>
+                    Anna – Licencelt Modell
+                </h3>
+
+                <p>
+                    Ideális ékszerekhez, kozmetikumokhoz,
+                    prémium divathoz és elegáns kampányokhoz.
+                </p>
+
+                <a href="mailto:pixelgirlsstudio@gmail.com?subject=Anna modell - ajánlatkérés"
+                   class="btn"
+                   style="padding:10px 18px; font-size:0.72rem;">
+
+                    EZT A MODELLT VÁLASZTOM
+
+                </a>
+
+            </div>
+
+
+            <div class="roster-card">
+
+                <img src="images/3.jpg"
+                     alt="Zsófi - licencelt digitális modell"
+                     onclick="openLightbox('images/3.jpg')">
+
+                <span class="roster-tag">
+                    Ruházat & Kiegészítők
+                </span>
+
+                <h3>
+                    Zsófi – Licencelt Modell
+                </h3>
+
+                <p>
+                    Modern karakter divatmárkákhoz,
+                    táskákhoz és lifestyle kampányokhoz.
+                </p>
+
+                <a href="mailto:pixelgirlsstudio@gmail.com?subject=Zsófi modell - ajánlatkérés"
+                   class="btn"
+                   style="padding:10px 18px; font-size:0.72rem;">
+
+                    EZT A MODELLT VÁLASZTOM
+
+                </a>
+
+            </div>
+
+
+            <div class="roster-card">
+
+                <img src="images/5.jpg"
+                     alt="Márk - licencelt digitális modell"
+                     onclick="openLightbox('images/5.jpg')">
+
+                <span class="roster-tag">
+                    Üzleti & Férfi Cikkek
+                </span>
+
+                <h3>
+                    Márk – Licencelt Modell
+                </h3>
+
+                <p>
+                    Órák, öltönyök, férfi divat és prémium
+                    kiegészítők bemutatására.
+                </p>
+
+                <a href="mailto:pixelgirlsstudio@gmail.com?subject=Mark modell - ajánlatkérés"
+                   class="btn"
+                   style="padding:10px 18px; font-size:0.72rem;">
+
+                    EZT A MODELLT VÁLASZTOM
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="catalogue-note">
+
+            A modellfelhasználás feltételeit, időtartamát,
+            területét és a kereskedelmi felhasználási jogokat
+            minden projekt esetében írásban rögzítjük.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRICES
+===================================================== -->
+
+<section id="arak">
+
+    <div class="section-kicker">
+        Egyszerű, átlátható csomagok
+    </div>
+
+    <h2>
+        CSOMAGOK ÉS BEFEKTETÉS
+    </h2>
+
+    <p class="section-desc">
+
+        Magánszemélyeknek fix csomagok.
+        Cégeknek a kampány méretéhez és felhasználásához
+        igazított ajánlat.
+
+    </p>
+
+
+    <div class="pricing-container">
+
+
+        <!-- PERSONAL -->
+
+        <div class="price-card featured">
+
+            <div>
+
+                <div class="price-badge">
+                    MAGÁNSZEMÉLYEKNEK
+                </div>
+
+                <h3>
+                    TÁRSKERESŐ PROFIL
+                </h3>
+
+                <div class="price-main">
+                    35.000 Ft
+                </div>
+
+                <ul class="price-details">
+
+                    <li>
+                        <strong>6 db</strong>
+                        természetes, vonzó profilkép
+                    </li>
+
+                    <li>
+                        Tinder, Bumble vagy egyéb profilra
+                    </li>
+
+                    <li>
+                        Előnyös megvilágítás és környezet
+                    </li>
+
+                    <li>
+                        Saját karaktered megőrzése
+                    </li>
+
+                    <li>
+                        Vízjelezett előnézet jóváhagyásra
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <a href="mailto:pixelgirlsstudio@gmail.com?subject=Társkereső profil csomag"
+               class="btn btn-filled">
+
+                TÁRSKERESŐ KÉPEKET KÉREK
+
+            </a>
+
+        </div>
+
+
+        <!-- BUSINESS -->
+
+        <div class="price-card">
+
+            <div>
+
+                <div class="price-badge">
+                    PROFESSIONAL
+                </div>
+
+                <h3>
+                    LINKEDIN / ÜZLETI PORTRÉ
+                </h3>
+
+                <div class="price-main">
+                    35.000 Ft
+                </div>
+
+                <ul class="price-details">
+
+                    <li>
+                        <strong>5 db</strong>
+                        prémium portré
+                    </li>
+
+                    <li>
+                        Természetes, bizalomkeltő megjelenés
+                    </li>
+
+                    <li>
+                        Irodai vagy elegáns városi környezet
+                    </li>
+
+                    <li>
+                        LinkedInhez és önéletrajzhoz
+                    </li>
+
+                    <li>
+                        Vízjelezett előnézet jóváhagyásra
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <a href="mailto:pixelgirlsstudio@gmail.com?subject=Üzleti portré csomag"
+               class="btn">
+
+                ÜZLETI PORTRÉT KÉREK
+
+            </a>
+
+        </div>
+
+
+        <!-- B2B -->
+
+        <div class="price-card">
+
+            <div>
+
+                <div class="price-badge">
+                    CÉGEKNEK
+                </div>
+
+                <h3>
+                    BRAND CAMPAIGN
+                </h3>
+
+                <div class="price-main">
+                    89.000 Ft-tól
+                </div>
+
+                <div class="price-sub">
+                    egyedi kampányigény szerint
+                </div>
+
+                <ul class="price-details">
+
+                    <li>
+                        <strong>10 db</strong>
+                        kampánykép
+                    </li>
+
+                    <li>
+                        Választható digitális modell
+                    </li>
+
+                    <li>
+                        A te terméked a modell mellett
+                    </li>
+
+                    <li>
+                        Webshop / reklám / kampány
+                    </li>
+
+                    <li>
+                        Egyedi felhasználási feltételek
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <a href="mailto:pixelgirlsstudio@gmail.com?subject=Brand Campaign ajánlatkérés"
+               class="btn">
+
+                B2B AJÁNLATOT KÉREK
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MIÉRT PIXEL-GIRLS
+===================================================== -->
+
+<section class="section-dark"
+         id="szolgaltatas">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Mi különböztet meg minket?
+        </div>
+
+        <h2>
+            NEM EGYSZERŰEN<br>
+            AI-KÉPEKET KÉSZÍTÜNK.
+        </h2>
+
+        <p class="section-desc">
+
+            A mesterséges intelligencia csak az eszköz.
+            A végeredményt a fotográfiai szemlélet,
+            a képi rendezés és az utómunka teszi használhatóvá.
+
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature-box">
+
+                <h3>
+                    FOTOGRÁFIAI SZEMLÉLET
+                </h3>
+
+                <p>
+                    Fény, kompozíció, póz, perspektíva,
+                    styling és utómunka alapján építjük
+                    fel a képeket.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    VALÓDI KARAKTER
+                </h3>
+
+                <p>
+                    Magánügyfélnél a saját karakteredből dolgozunk.
+                    Céges kampánynál valódi, licencelt modellek
+                    digitális karakterei is választhatók.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    KEVESEBB SZERVEZÉS
+                </h3>
+
+                <p>
+                    Nincs stúdióbérlés, utazás, modellcasting,
+                    fotózási nap vagy helyszínkeresés.
+                    A produkció digitálisan történik.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta"
+         id="kapcsolat">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Következő lépés
+        </div>
+
+        <h2>
+            MUTASD MEG, MIBŐL<br>
+            SZERETNÉL KAMPÁNYT.
+        </h2>
+
+        <p>
+
+            Küldd el a saját fotóidat vagy a termékedet,
+            írd meg röviden, mire szeretnéd használni,
+            és megmutatjuk, milyen irányban érdemes elindulni.
+
+        </p>
+
+
+        <a href="mailto:pixelgirlsstudio@gmail.com?subject=Pixel-Girls ajánlatkérés"
+           class="btn btn-filled">
+
+            AJÁNLATOT KÉREK
+
+        </a>
+
+
+        <a href="mailto:pixelgirlsstudio@gmail.com"
+           class="email">
+
+            pixelgirlsstudio@gmail.com
+
+        </a>
+
+
+        <!-- PARTNER LINKS -->
+
+        <div class="partner-links">
+
+            <p>
+                Hagyományos fotózást szeretnél?
+                Tekintsd meg partneroldalainkat:
+            </p>
+
+            <a href="https://centaur.hu"
+               target="_blank"
+               rel="noopener"
+               class="partner-btn">
+
+                Centaur Photography
+
+            </a>
+
+            <a href="https://www.sincitystudio.hu"
+               target="_blank"
+               rel="noopener"
+               class="partner-btn">
+
+                Sin City Stúdió
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        &copy; 2026 PIXEL-GIRLS STUDIO |
+        Minden jog fenntartva.
+    </p>
+
+    <p>
+
+        <a href="https://www.instagram.com/pixelgirlsstudio/"
+           target="_blank"
+           rel="noopener">
+
+            Instagram
+
+        </a>
+
+        &nbsp; | &nbsp;
+
+        <a href="aszf.html">
+
+            Általános Szerződési Feltételek (ÁSZF)
+
+        </a>
+
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    function openLightbox(src) {
+
+        const lightbox =
+            document.getElementById('lightbox');
+
+        const image =
+            document.getElementById('lightbox-img');
+
+        image.src = src;
+
+        lightbox.style.display = 'flex';
+
+        document.body.classList.add('no-scroll');
+
+    }
+
+
+    function closeLightbox() {
+
+        const lightbox =
+            document.getElementById('lightbox');
+
+        lightbox.style.display = 'none';
+
+        document.body.classList.remove('no-scroll');
+
+        document.getElementById('lightbox-img').src = '';
+
+    }
+
+
+    /* ESC billentyűvel bezárható */
+
+    document.addEventListener('keydown', function(event) {
+
+        if (event.key === 'Escape') {
+
+            closeLightbox();
+
+        }
+
+    });
+
+
+    /* Kép kattintás ne zárja be a lightboxot */
+
+    document.getElementById('lightbox-img')
+        .addEventListener('click', function(event) {
+
+            event.stopPropagation();
+
+        });
+
+</script>
+
+</body>
+</html>
 ```
