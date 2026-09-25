@@ -535,6 +535,25 @@
         @media(max-width:700px) { .showcase-thumbs {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;} .showcase-topline {padding:12px;} .compare-stage {aspect-ratio:4/5;} .showcase-modal .compare-stage {aspect-ratio:4/5;max-height:calc(95vh - 125px);} .showcase-controls {padding:15px;} .compare-label {top:10px;font-size:.58rem;} .compare-label.before {left:8px;} .compare-label.after {right:8px;} .showcase-hint {max-width:220px;} }
         @media(prefers-reduced-motion:reduce) { .showcase-thumb,.showcase-thumb-photo img,.showcase-tab {transition:none;} }
 
+
+        /* Kreatív kampányok: egyetlen kész kompozíció, csúszka nélkül. */
+        .campaign-stage { display:none; position:relative; background:#090909; min-height:300px; }
+        .campaign-stage img { display:block; width:100%; max-height:720px; object-fit:contain; margin:auto; }
+        .campaign-stage .campaign-placeholder { display:none; min-height:340px; align-items:center; justify-content:center; text-align:center; color:#aaa; padding:25px; }
+        .campaign-stage.is-missing img { display:none; }
+        .campaign-stage.is-missing .campaign-placeholder { display:flex; }
+        .showcase-main.is-campaign .compare-stage,
+        .showcase-main.is-campaign .showcase-slider,
+        .showcase-main.is-campaign .compare-legend,
+        .showcase-main.is-campaign .compare-instruction { display:none; }
+        .showcase-main.is-campaign .campaign-stage { display:block; }
+        .showcase-modal.is-campaign .compare-stage,
+        .showcase-modal.is-campaign .showcase-controls { display:none; }
+        .showcase-modal.is-campaign .campaign-stage { display:block; }
+        .showcase-modal .campaign-stage img { max-height:calc(95vh - 95px); }
+        .campaign-badge { position:absolute; top:14px; left:14px; padding:8px 12px; background:#050505e8; border-left:3px solid var(--primary-color); color:var(--primary-color); font-size:.7rem; font-weight:700; letter-spacing:1px; }
+        @media(max-width:700px) { .campaign-stage {min-height:220px;} .campaign-stage .campaign-placeholder {min-height:240px;} }
+
         /* =====================================================
            B2B INTRO
         ===================================================== */
@@ -1334,13 +1353,13 @@
     <div class="section-inner">
         <div class="section-kicker">Pixel-Girls | Referenciamunkák</div>
         <h2>EGY FOTÓBÓL<br>TELJES VIZUÁLIS VILÁG</h2>
-        <p class="section-desc">Nézd meg, hogyan válik egy hétköznapi fotóból magabiztos társkereső portré, professzionális üzleti megjelenés vagy prémium kampánykép. Ugyanaz az arc, ugyanaz a karakter – egy egészen új vizuális élmény.</p>
+        <p class="section-desc">Fedezd fel a személyes portrék átalakulását a húzható összehasonlítóval, majd nézd meg a termékekből és valódi modellekből alkotott kész kampányképeinket.</p>
         <div class="showcase">
             <div class="showcase-tabs" role="tablist" aria-label="Referenciák kategóriái">
                 <button class="showcase-tab" type="button" role="tab" aria-selected="true" data-showcase-category="szemelyes">SZEMÉLYES ÁTALAKULÁSOK</button>
                 <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-showcase-category="kampany">KREATÍV KAMPÁNYOK</button>
             </div>
-            <div class="showcase-main">
+            <div class="showcase-main" id="showcase-main">
                 <div class="showcase-topline"><span class="showcase-eyebrow">PIXEL-GIRLS SHOWCASE</span><span class="showcase-counter" id="showcase-counter" aria-live="polite">01 / 03</span></div>
                 <div class="compare-stage" id="showcase-stage" aria-label="Eredeti és elkészült kép összehasonlítása">
                     <div class="compare-placeholder"><div><strong>A referenciafotók helye</strong>A képek feltöltése után itt jelenik meg az interaktív összehasonlítás.</div></div>
@@ -1348,6 +1367,11 @@
                     <img class="compare-after" id="showcase-after" alt="Elkészült Pixel-Girls referenciafotó">
                     <span class="compare-label before">← EREDETI FOTÓ</span><span class="compare-label after">PIXEL-GIRLS VÉGEREDMÉNY →</span>
                     <span class="compare-divider" id="showcase-divider"><span class="compare-handle">↔</span></span>
+                </div>
+                <div class="campaign-stage is-missing" id="showcase-campaign-stage" aria-label="Elkészült kampánykép">
+                    <div class="campaign-placeholder">A kampánykép feltöltés után jelenik meg.</div>
+                    <img id="showcase-campaign-image" alt="Pixel-Girls – elkészült kampánykép">
+                    <span class="campaign-badge">ELKÉSZÜLT KAMPÁNYKÉP</span>
                 </div>
                 <div class="showcase-controls">
                     <h3 class="showcase-title" id="showcase-title">Társkereső profil újragondolva</h3>
@@ -1364,7 +1388,7 @@
     </div>
 </section>
 
-<!-- Önálló, nagy méretű összehasonlító nézet; a meglévő lightbox változatlan marad. -->
+<!-- Nagy méretű portré-összehasonlító és kampányképnézet; a meglévő lightbox változatlan marad. -->
 <div class="showcase-modal" id="showcase-modal" role="dialog" aria-modal="true" aria-label="Referenciafotó nagy méretben" aria-hidden="true">
     <div class="showcase-modal-inner">
         <div class="showcase-modal-head"><strong id="showcase-modal-title">Referenciafotó</strong><button type="button" class="showcase-modal-close" id="showcase-modal-close" aria-label="Bezárás">&times;</button></div>
@@ -1374,6 +1398,11 @@
             <img class="compare-after" id="showcase-modal-after" alt="Elkészült referenciafotó">
             <span class="compare-label before">← EREDETI FOTÓ</span><span class="compare-label after">PIXEL-GIRLS VÉGEREDMÉNY →</span>
             <span class="compare-divider" id="showcase-modal-divider"><span class="compare-handle">↔</span></span>
+        </div>
+        <div class="campaign-stage is-missing" id="showcase-modal-campaign-stage" aria-label="Kampánykép nagy méretben">
+            <div class="campaign-placeholder">A kampánykép feltöltés után jelenik meg.</div>
+            <img id="showcase-modal-campaign-image" alt="Pixel-Girls – kampánykép nagy méretben">
+            <span class="campaign-badge">ELKÉSZÜLT KAMPÁNYKÉP</span>
         </div>
         <div class="showcase-controls"><input class="showcase-slider" id="showcase-modal-slider" type="range" min="0" max="100" value="50" aria-label="Nagyított kép: bal oldalon eredeti, jobb oldalon végeredmény"><div class="compare-legend"><span class="compare-legend-before">← EREDETI FOTÓ</span><span class="compare-legend-after">PIXEL-GIRLS VÉGEREDMÉNY →</span></div><p class="compare-instruction">Balra húzva a kész kép, jobbra húzva az eredeti fotó látható nagyobb felületen.</p></div>
     </div>
@@ -2194,9 +2223,9 @@
             {category:'szemelyes',title:'Társkereső profil újragondolva',description:'Természetes karakter, előnyös megvilágítás és magabiztos megjelenés.',before:'images/tars-eredeti.jpg',after:'images/tars-vegeredmeny.jpg'},
             {category:'szemelyes',title:'Prémium glamour és boudoir',description:'Egyedi hangulat, kifinomult styling és személyre szabott képi világ.',before:'images/glamour-eredeti.jpg',after:'images/glamour-vegeredmeny.jpg'},
             {category:'szemelyes',title:'Professzionális üzleti portré',description:'Hiteles, bizalomkeltő megjelenés LinkedInhez, önéletrajzhoz és weboldalhoz.',before:'images/uzleti-eredeti.jpg',after:'images/uzleti-vegeredmeny.jpg'},
-            {category:'kampany',title:'Parfüm – prémium kampány',description:'Termékfotóból karakteres, modellközpontú reklámvizuál.',before:'images/parfum-eredeti.jpg',after:'images/parfum-vegeredmeny.jpg'},
-            {category:'kampany',title:'Ékszer – elegáns kampány',description:'A termék részleteit és a modell megjelenését összehangoló kreatív.',before:'images/ekszer-eredeti.jpg',after:'images/ekszer-vegeredmeny.jpg'},
-            {category:'kampany',title:'Divat – digitális modellkampány',description:'Ruházat és kiegészítők új vizuális környezetben, kampánycélra készítve.',before:'images/divat-eredeti.jpg',after:'images/divat-vegeredmeny.jpg'}
+            {category:'kampany',title:'Parfüm – prémium kampány',description:'Anna modell és a parfüm találkozása egy kész, prémium reklámkompozícióban.',after:'images/parfum-vegeredmeny.jpg'},
+            {category:'kampany',title:'Óra – karakteres kampány',description:'Márk modell és a sportóra katonai ihletésű, karakteres kampányképen.',after:'images/ekszer-vegeredmeny.jpg'},
+            {category:'kampany',title:'Divat – digitális modellkampány',description:'Zsófi modell, a ruha és a cipő egyetlen megkomponált divatkampányban.',after:'images/divat-vegeredmeny.jpg'}
         ];
         const $ = id => document.getElementById(id);
         const tabs = document.querySelectorAll('[data-showcase-category]');
@@ -2228,14 +2257,36 @@
             });
             setComparison(prefix,50);
         }
+        function setCampaignImage(prefix,item) {
+            const stage=$(prefix+'-campaign-stage');
+            const img=$(prefix+'-campaign-image');
+            stage.classList.add('is-missing');
+            img.onload=()=>stage.classList.remove('is-missing');
+            img.onerror=()=>stage.classList.add('is-missing');
+            img.src=item.after;
+            if(img.complete && img.naturalWidth) stage.classList.remove('is-missing');
+        }
         function render() {
             const list=items(), item=list[currentIndex];
+            const isCampaign=category==='kampany';
+            $('showcase-main').classList.toggle('is-campaign',isCampaign);
+            modal.classList.toggle('is-campaign',isCampaign);
+            $('showcase-open').textContent=isCampaign?'KAMPÁNYKÉP NAGY MÉRETBEN ↗':'NAGY MÉRETBEN ↗';
+            $('showcase-stage').setAttribute('aria-hidden',String(isCampaign));
+            $('showcase-modal-stage').setAttribute('aria-hidden',String(isCampaign));
+            $('showcase-slider').disabled=isCampaign;
+            $('showcase-modal-slider').disabled=isCampaign;
             $('showcase-counter').textContent=String(currentIndex+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0');
             $('showcase-title').textContent=item.title;
             $('showcase-description').textContent=item.description;
             $('showcase-modal-title').textContent=item.title;
-            setImages('showcase',item);
-            setImages('showcase-modal',item);
+            if(isCampaign) {
+                setCampaignImage('showcase',item);
+                setCampaignImage('showcase-modal',item);
+            } else {
+                setImages('showcase',item);
+                setImages('showcase-modal',item);
+            }
             thumbs.replaceChildren();
             list.forEach((entry,i)=>{
                 const btn=document.createElement('button');
@@ -2286,7 +2337,7 @@
         $('showcase-open').addEventListener('click',()=>{
             lastFocus=document.activeElement;
             modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');
-            setComparison('showcase-modal',$('showcase-slider').value);
+            if(category==='szemelyes') setComparison('showcase-modal',$('showcase-slider').value);
             document.body.classList.add('no-scroll');
             $('showcase-modal-close').focus();
         });
@@ -2296,10 +2347,10 @@
             if(!modal.classList.contains('is-open'))return;
             if(event.key==='Escape'){event.preventDefault();closeModal();}
             if(event.key==='Tab'){
-                const controls=[$('showcase-modal-close'),$('showcase-modal-slider')];
+                const controls=category==='kampany'?[$('showcase-modal-close')]:[$('showcase-modal-close'),$('showcase-modal-slider')];
                 const i=controls.indexOf(document.activeElement);
-                if(event.shiftKey && i===0){event.preventDefault();controls[1].focus();}
-                else if(!event.shiftKey && i===1){event.preventDefault();controls[0].focus();}
+                if(event.shiftKey && i===0){event.preventDefault();controls[controls.length-1].focus();}
+                else if(!event.shiftKey && i===controls.length-1){event.preventDefault();controls[0].focus();}
             }
         });
         render();
