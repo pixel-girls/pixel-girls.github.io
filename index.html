@@ -1010,7 +1010,42 @@
         .roster-carousel .roster-slide.is-active.is-missing + .roster-missing {display:flex;}
         @media(prefers-reduced-motion:reduce){.roster-carousel .roster-slide.is-active{animation:none;}}
 
-    </style>
+    
+/* Két célcsoport – közös márka, elkülönített útvonalak */
+html {scroll-behavior:smooth;scroll-padding-top:85px;}
+section[id] {scroll-margin-top:85px;}
+.hero-choice-label {color:var(--primary-color);letter-spacing:2px;font-size:.8rem;margin:35px auto 18px;font-weight:700;}
+.hero-paths {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:940px;margin:0 auto 30px;text-align:left;}
+.hero-path {display:block;text-decoration:none;color:#fff;background:#141414;border:1px solid #755c21;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.hero-path:hover,.hero-path:focus-visible {transform:translateY(-5px);border-color:var(--primary-color);box-shadow:0 14px 35px #0009;}
+.hero-path img {display:block;width:100%;height:215px;object-fit:cover;object-position:center 34%;background:#222;}
+.hero-path-body {display:flex;flex-direction:column;gap:10px;padding:22px;}
+.hero-path-body strong {font:700 clamp(1.15rem,2vw,1.55rem) 'Playfair Display',serif;color:var(--primary-color);}
+.hero-path-body small {color:#ccc;font-size:.88rem;line-height:1.6;min-height:2.5em;}
+.hero-path-cta {background:var(--primary-color);color:#090909;padding:12px 10px;font-size:.76rem;font-weight:800;letter-spacing:.7px;text-align:center;}
+.audience-band {max-width:1100px;margin:0 auto 45px;padding:32px 22px;border-top:2px solid var(--primary-color);border-bottom:1px solid #4a3a19;text-align:center;background:linear-gradient(100deg,#19150c,#101010 70%);}
+.audience-band span {color:var(--primary-color);letter-spacing:2px;font-size:.72rem;}
+.audience-band h2 {font:700 clamp(1.55rem,3vw,2.6rem) 'Playfair Display',serif;color:var(--primary-color);margin:15px 0;}
+.audience-band p {max-width:720px;margin:0 auto;color:#ccc;line-height:1.7;}
+.audience-band-business {background:linear-gradient(100deg,#101010,#21190e 70%);}
+.campaign-gallery-section {background:#0b0b0b;padding:75px 20px 90px;border-top:1px solid #3e311a;}
+.campaign-gallery-section h2 {font-family:'Playfair Display',serif;text-align:center;color:var(--primary-color);font-size:clamp(2rem,4vw,3rem);line-height:1.2;}
+.campaign-gallery-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px;}
+.campaign-gallery-card {min-width:0;border:1px solid #6c541e;background:#171717;color:#eee;padding:0;text-align:left;cursor:zoom-in;transition:transform .25s,border-color .25s;}
+.campaign-gallery-card:hover,.campaign-gallery-card:focus-visible {transform:translateY(-5px);border-color:var(--primary-color);}
+.campaign-gallery-photo {display:flex;position:relative;aspect-ratio:4/5;align-items:center;justify-content:center;background:#222;overflow:hidden;}
+.campaign-gallery-photo img {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#111;z-index:1;}
+.campaign-gallery-fallback {color:#ad955d;text-align:center;padding:20px;font-size:.75rem;letter-spacing:1px;}
+.campaign-gallery-meta {display:flex;flex-direction:column;gap:9px;padding:18px;}
+.campaign-gallery-meta strong {color:var(--primary-color);font-size:1rem;}
+.campaign-gallery-meta small {color:#bbb;}
+.campaign-gallery-meta em {font-size:.72rem;color:var(--primary-color);font-style:normal;letter-spacing:1px;margin-top:7px;}
+.campaign-gallery-cta {display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:35px;}
+@media(max-width:900px){.nav-links{gap:10px}.nav-links a{font-size:.66rem}}
+@media(max-width:700px){.hero-paths{grid-template-columns:1fr;max-width:440px}.hero-path img{height:190px}.campaign-gallery-grid{grid-template-columns:1fr;max-width:510px;margin:30px auto 0}.campaign-gallery-photo{aspect-ratio:4/4}.audience-band{padding:25px 15px}.campaign-gallery-section{padding:55px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-path,.campaign-gallery-card{transition:none}}
+
+</style>
 </head>
 
 
@@ -1063,11 +1098,15 @@
         <div class="nav-links">
 
             <a href="#maganszemely">
-                Magánszemélyek
+                Magánügyfeleknek
             </a>
 
             <a href="#cegek">
-                Cégeknek
+                Vállalkozásoknak
+            </a>
+
+            <a href="#portfolio">
+                Referenciák
             </a>
 
             <a href="#katalogus">
@@ -1101,30 +1140,26 @@
     </div>
 
     <h1>
-        A TE ARCOD. A TE STÍLUSOD.
-        <span>EGY ÚJ DIMENZIÓ.</span>
+        VALÓDI EMBEREK.
+        <span>ÚJ VIZUÁLIS VILÁGOK.</span>
     </h1>
 
     <p class="hero-lead">
-        <strong>Prémium digitális fotósorozatok – stúdiófotózás nélkül.</strong><br>
-        Meglévő fényképeidből, fotográfiai szakértelemmel és
-        mesterséges intelligencia segítségével készítünk egyedi portrékat.
-        Cégeknek valódi, licencelt modellekkel és termékfotókkal
-        alkotunk reklám- és kampányképeket.
+        <strong>Professzionális portrék és prémium reklámkampányok – digitálisan, fotográfiai szemlélettel.</strong><br>
+        Saját fotódból személyre szabott portrét készítünk; vállalkozásoknak valódi, licencelt
+        modellek és termékfotók felhasználásával alkotunk reklámkampányokat.
     </p>
 
-    <div class="cta-group">
-
-        <a href="#maganszemely"
-           class="btn btn-filled">
-            MAGAMNAK SZERETNÉK KÉPEKET
+    <p class="hero-choice-label">MIT SZERETNÉL LÉTREHOZNI?</p>
+    <div class="hero-paths">
+        <a class="hero-path" href="#maganszemely" aria-label="Magánügyfeleknek – személyes portrék">
+            <img src="images/tars.jpg" alt="Személyes digitális portré – társkereső, üzleti és glamour" loading="eager">
+            <span class="hero-path-body"><strong>SAJÁT PORTRÉT</strong><small>Társkereső, üzleti portré és glamour.</small><span class="hero-path-cta">MAGÁNÜGYFELEKNEK →</span></span>
         </a>
-
-        <a href="#cegek"
-           class="btn">
-            CÉGES KAMPÁNYT SZERETNÉK
+        <a class="hero-path" href="#cegek" aria-label="Vállalkozásoknak – digitális termékkampányok">
+            <img src="images/kampany.jpg" alt="Digitális termékkampány valódi modell karakterével" loading="eager">
+            <span class="hero-path-body"><strong>REKLÁMKAMPÁNYT</strong><small>Valódi modellek, termékek és digitális produkció.</small><span class="hero-path-cta">VÁLLALKOZÁSOKNAK →</span></span>
         </a>
-
     </div>
 
     <p class="hero-note">
@@ -1137,12 +1172,91 @@
 
 </header>
 
+<!-- KÖZÖS ÉRTÉKAJÁNLAT -->
+<section class="section-dark"
+         id="szolgaltatas">
+
+    <div class="section-inner">
+
+        <div class="section-kicker">
+            Mi különböztet meg minket?
+        </div>
+
+        <h2>
+            NEM CSAK KÉPEKET GENERÁLUNK.<br>
+            VIZUÁLIS ÉLMÉNYT ALKOTUNK.
+        </h2>
+
+        <p class="section-desc">
+
+            A mesterséges intelligencia nálunk kreatív eszköz.
+            A végeredményt a fotográfiai szemlélet,
+            a képi rendezés és az utómunka teszi használhatóvá.
+
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature-box">
+
+                <h3>
+                    FOTOGRÁFIAI SZEMLÉLET
+                </h3>
+
+                <p>
+                    Fény, kompozíció, póz, perspektíva,
+                    styling és utómunka alapján építjük
+                    fel a képeket.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    VALÓDI KARAKTER
+                </h3>
+
+                <p>
+                    Magánügyfélnél a saját karakteredből dolgozunk.
+                    Céges kampánynál valódi, licencelt modellek
+                    digitális karakterei is választhatók.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    KEVESEBB SZERVEZÉS
+                </h3>
+
+                <p>
+                    Nincs stúdióbérlés, utazás, modellcasting,
+                    fotózási nap vagy helyszínkeresés.
+                    A produkció digitálisan történik.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- =====================================================
      KINEK?
 ===================================================== -->
 
-<section id="maganszemely">
+<section id="maganszemely" class="private-area">
+    <div class="audience-band"><span>01 / MAGÁNÜGYFELEKNEK</span><h2>A LEGJOBB ARCODAT MUTATJUK MEG.</h2><p>Saját fényképeidből új vizuális világot építünk, miközben megőrizzük a természetes karakteredet.</p></div>
 
     <div class="section-kicker">
         Egy technológia. Több megoldás.
@@ -1368,14 +1482,10 @@
 ===================================================== -->
 <section class="portfolio-section" id="portfolio">
     <div class="section-inner">
-        <div class="section-kicker">Pixel-Girls | Referenciamunkák</div>
+        <div class="section-kicker">01 / Magánügyfelek – személyes átalakulások</div>
         <h2>EGY FOTÓBÓL<br>TELJES VIZUÁLIS VILÁG</h2>
-        <p class="section-desc">Fedezd fel a személyes portrék átalakulását a húzható összehasonlítóval, majd nézd meg a termékekből és valódi modellekből alkotott kész kampányképeinket.</p>
+        <p class="section-desc">Nézd meg, hogyan válik egy egyszerű saját fotóból professzionális portré. Húzd el az arany választóvonalat az eredeti és az elkészült kép között!</p>
         <div class="showcase">
-            <div class="showcase-tabs" role="tablist" aria-label="Referenciák kategóriái">
-                <button class="showcase-tab" type="button" role="tab" aria-selected="true" data-showcase-category="szemelyes">SZEMÉLYES ÁTALAKULÁSOK</button>
-                <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-showcase-category="kampany">KREATÍV KAMPÁNYOK</button>
-            </div>
             <div class="showcase-main" id="showcase-main">
                 <div class="showcase-topline"><span class="showcase-eyebrow">PIXEL-GIRLS SHOWCASE</span><span class="showcase-counter" id="showcase-counter" aria-live="polite">01 / 03</span></div>
                 <div class="compare-stage" id="showcase-stage" aria-label="Eredeti és elkészült kép összehasonlítása">
@@ -1430,7 +1540,8 @@
 ===================================================== -->
 
 <section class="section-dark"
-         id="cegek">
+         id="cegek" class="business-area">
+    <div class="audience-band audience-band-business"><span>02 / VÁLLALKOZÁSOKNAK</span><h2>A TERMÉKEDBŐL KAMPÁNYT ALKOTUNK.</h2><p>Valódi modellek digitális karaktereivel és termékfotóiddal készítünk prémium reklámképeket.</p></div>
 
     <div class="section-inner">
 
@@ -1584,6 +1695,31 @@
 <!-- =====================================================
      MODEL CATALOGUE
 ===================================================== -->
+
+
+<!-- KREATÍV KAMPÁNYOK: KÉSZ KOMPOZÍCIÓK, CSÚSZKA NÉLKÜL -->
+<section class="campaign-gallery-section" id="kampanyreferenciak">
+    <div class="section-inner">
+        <div class="section-kicker">02 / Vállalkozások – kreatív kampányok</div>
+        <h2>EGY TERMÉKBŐL<br>TELJES REKLÁMVILÁG</h2>
+        <p class="section-desc">A termékfotót és a választott modell karakterét egy kész reklámkompozícióban egyesítjük. Kattints a kampányképre a nagyításhoz!</p>
+        <div class="campaign-gallery-grid">
+            <button class="campaign-gallery-card" type="button" data-campaign-image="images/parfum-vegeredmeny.jpg" aria-label="Anna – parfümkampány nagy méretben">
+                <span class="campaign-gallery-photo"><img src="images/parfum-vegeredmeny.jpg" alt="Anna – elkészült parfümkampány" loading="lazy" onerror="this.style.display='none'"><span class="campaign-gallery-fallback">PARFÜMKAMPÁNY – KÉP HAMAROSAN</span></span>
+                <span class="campaign-gallery-meta"><strong>PARFÜM · ANNA</strong><small>Prémium termékkampány</small><em>NAGY MÉRETBEN ↗</em></span>
+            </button>
+            <button class="campaign-gallery-card" type="button" data-campaign-image="images/divat-vegeredmeny.jpg" aria-label="Zsófi – divatkampány nagy méretben">
+                <span class="campaign-gallery-photo"><img src="images/divat-vegeredmeny.jpg" alt="Zsófi – elkészült divatkampány" loading="lazy" onerror="this.style.display='none'"><span class="campaign-gallery-fallback">DIVATKAMPÁNY – KÉP HAMAROSAN</span></span>
+                <span class="campaign-gallery-meta"><strong>DIVAT · ZSÓFI</strong><small>Ruházat és kiegészítők</small><em>NAGY MÉRETBEN ↗</em></span>
+            </button>
+            <button class="campaign-gallery-card" type="button" data-campaign-image="images/ekszer-vegeredmeny.jpg" aria-label="Márk – órakampány nagy méretben">
+                <span class="campaign-gallery-photo"><img src="images/ekszer-vegeredmeny.jpg" alt="Márk – elkészült órakampány" loading="lazy" onerror="this.style.display='none'"><span class="campaign-gallery-fallback">ÓRAKAMPÁNY – KÉP HAMAROSAN</span></span>
+                <span class="campaign-gallery-meta"><strong>ÓRA · MÁRK</strong><small>Karakteres termékmegjelenés</small><em>NAGY MÉRETBEN ↗</em></span>
+            </button>
+        </div>
+        <div class="campaign-gallery-cta"><a class="btn" href="#katalogus">VÁLASZTHATÓ MODELLEK →</a><a class="btn" href="mailto:pixelgirlsstudio@gmail.com?subject=Pixel-Girls B2B kampány ajánlatkérés">KAMPÁNYAJÁNLATOT KÉREK →</a></div>
+    </div>
+</section>
 
 <section class="catalogue-section"
          id="katalogus">
@@ -1752,7 +1888,7 @@
      PRICES
 ===================================================== -->
 
-<section id="arak">
+<section id="arak" class="pricing-area">
 
     <div class="section-kicker">
         Egyszerű, átlátható csomagok
@@ -1948,86 +2084,7 @@
 </section>
 
 
-<!-- =====================================================
-     MIÉRT PIXEL-GIRLS
-===================================================== -->
 
-<section class="section-dark"
-         id="szolgaltatas">
-
-    <div class="section-inner">
-
-        <div class="section-kicker">
-            Mi különböztet meg minket?
-        </div>
-
-        <h2>
-            NEM EGYSZERŰEN<br>
-            AI-KÉPEKET KÉSZÍTÜNK.
-        </h2>
-
-        <p class="section-desc">
-
-            A mesterséges intelligencia csak az eszköz.
-            A végeredményt a fotográfiai szemlélet,
-            a képi rendezés és az utómunka teszi használhatóvá.
-
-        </p>
-
-
-        <div class="features">
-
-
-            <div class="feature-box">
-
-                <h3>
-                    FOTOGRÁFIAI SZEMLÉLET
-                </h3>
-
-                <p>
-                    Fény, kompozíció, póz, perspektíva,
-                    styling és utómunka alapján építjük
-                    fel a képeket.
-                </p>
-
-            </div>
-
-
-            <div class="feature-box">
-
-                <h3>
-                    VALÓDI KARAKTER
-                </h3>
-
-                <p>
-                    Magánügyfélnél a saját karakteredből dolgozunk.
-                    Céges kampánynál valódi, licencelt modellek
-                    digitális karakterei is választhatók.
-                </p>
-
-            </div>
-
-
-            <div class="feature-box">
-
-                <h3>
-                    KEVESEBB SZERVEZÉS
-                </h3>
-
-                <p>
-                    Nincs stúdióbérlés, utazás, modellcasting,
-                    fotózási nap vagy helyszínkeresés.
-                    A produkció digitálisan történik.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
@@ -2147,6 +2204,11 @@
 
 <script>
 
+
+    /* Kampánygaléria: a kész kompozíciók külön, nagy méretben nyílnak meg. */
+    document.querySelectorAll('[data-campaign-image]').forEach(card => {
+        card.addEventListener('click', () => openLightbox(card.dataset.campaignImage));
+    });
 
     /* Modellkatalógus: 3 kép/modell, kézi és automatikus lapozás. */
     (function initRosterCarousels() {
