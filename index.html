@@ -496,7 +496,15 @@
         .compare-divider { position:absolute; z-index:3; top:0; bottom:0; left:50%; width:2px; background:var(--primary-color); transform:translateX(-50%); pointer-events:none; box-shadow:0 0 14px #000; }
         .compare-handle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border:2px solid var(--primary-color); border-radius:50%; background:#050505e8; display:grid; place-items:center; color:var(--primary-color); font-size:22px; }
         .compare-label { position:absolute; z-index:4; top:18px; padding:7px 11px; background:#050505d9; color:#fff; font-size:.68rem; font-weight:700; letter-spacing:1.4px; pointer-events:none; }
-        .compare-label.before { left:16px; }.compare-label.after { right:16px; }
+        .compare-label.before { left:16px; border-left:3px solid #ddd; }
+        .compare-label.after { right:16px; border-left:3px solid var(--primary-color); color:var(--primary-color); }
+        .compare-label { transition:opacity .15s ease; }
+        .compare-stage.hide-before .compare-label.before,
+        .compare-stage.hide-after .compare-label.after { opacity:0; }
+        .compare-legend { display:flex; justify-content:space-between; gap:12px; align-items:center; margin:10px 0 0; font-size:.75rem; font-weight:700; letter-spacing:.5px; }
+        .compare-legend-before { color:#ddd; }
+        .compare-legend-after { color:var(--primary-color); text-align:right; }
+        .compare-instruction { color:#aaa; font-size:.77rem; margin:10px 0 0; text-align:center; }
         .compare-placeholder { position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:24px; color:#adadad; font-size:.9rem; }
         .compare-placeholder strong { display:block; color:var(--primary-color); margin-bottom:7px; }
         .compare-stage.has-images .compare-placeholder { display:none; }
@@ -1338,14 +1346,16 @@
                     <div class="compare-placeholder"><div><strong>A referenciafotók helye</strong>A képek feltöltése után itt jelenik meg az interaktív összehasonlítás.</div></div>
                     <img class="compare-before" id="showcase-before" alt="Eredeti referenciafotó">
                     <img class="compare-after" id="showcase-after" alt="Elkészült Pixel-Girls referenciafotó">
-                    <span class="compare-label before">EREDETI</span><span class="compare-label after">VÉGEREDMÉNY</span>
+                    <span class="compare-label before">← EREDETI FOTÓ</span><span class="compare-label after">PIXEL-GIRLS VÉGEREDMÉNY →</span>
                     <span class="compare-divider" id="showcase-divider"><span class="compare-handle">↔</span></span>
                 </div>
                 <div class="showcase-controls">
                     <h3 class="showcase-title" id="showcase-title">Társkereső profil újragondolva</h3>
                     <p class="showcase-description" id="showcase-description">Természetes karakter, előnyös megvilágítás és magabiztos megjelenés.</p>
-                    <input class="showcase-slider" id="showcase-slider" type="range" min="0" max="100" value="50" aria-label="Az eredeti és az elkészült fotó közötti választóvonal">
-                    <div class="showcase-actions"><span class="showcase-hint">Húzd el a választóvonalat, és fedezd fel a különbséget!</span><button type="button" class="showcase-open" id="showcase-open">NAGY MÉRETBEN ↗</button></div>
+                    <input class="showcase-slider" id="showcase-slider" type="range" min="0" max="100" value="50" aria-label="Képösszehasonlítás: bal oldalon az eredeti fotó, jobb oldalon a Pixel-Girls végeredmény">
+                    <div class="compare-legend"><span class="compare-legend-before">← EREDETI FOTÓ</span><span class="compare-legend-after">PIXEL-GIRLS VÉGEREDMÉNY →</span></div>
+                    <p class="compare-instruction">Balra húzva a kész kép, jobbra húzva az eredeti fotó látható nagyobb felületen.</p>
+                    <div class="showcase-actions"><span class="showcase-hint">Húzd el az arany választóvonalat, és hasonlítsd össze a két képet!</span><button type="button" class="showcase-open" id="showcase-open">NAGY MÉRETBEN ↗</button></div>
                 </div>
             </div>
             <div class="showcase-thumbs" id="showcase-thumbs" aria-label="Választható referenciamunkák"></div>
@@ -1362,10 +1372,10 @@
             <div class="compare-placeholder"><div><strong>A referenciafotók helye</strong>Töltsd fel a megfelelő képpárt az images mappába.</div></div>
             <img class="compare-before" id="showcase-modal-before" alt="Eredeti referenciafotó">
             <img class="compare-after" id="showcase-modal-after" alt="Elkészült referenciafotó">
-            <span class="compare-label before">EREDETI</span><span class="compare-label after">VÉGEREDMÉNY</span>
+            <span class="compare-label before">← EREDETI FOTÓ</span><span class="compare-label after">PIXEL-GIRLS VÉGEREDMÉNY →</span>
             <span class="compare-divider" id="showcase-modal-divider"><span class="compare-handle">↔</span></span>
         </div>
-        <div class="showcase-controls"><input class="showcase-slider" id="showcase-modal-slider" type="range" min="0" max="100" value="50" aria-label="Nagyított kép összehasonlítása"></div>
+        <div class="showcase-controls"><input class="showcase-slider" id="showcase-modal-slider" type="range" min="0" max="100" value="50" aria-label="Nagyított kép: bal oldalon eredeti, jobb oldalon végeredmény"><div class="compare-legend"><span class="compare-legend-before">← EREDETI FOTÓ</span><span class="compare-legend-after">PIXEL-GIRLS VÉGEREDMÉNY →</span></div><p class="compare-instruction">Balra húzva a kész kép, jobbra húzva az eredeti fotó látható nagyobb felületen.</p></div>
     </div>
 </div>
 
@@ -2200,6 +2210,8 @@
             const n = Math.max(0,Math.min(100,Number(value)));
             $(prefix+'-after').style.clipPath = 'inset(0 0 0 '+n+'%)';
             $(prefix+'-divider').style.left = n+'%';
+            $(prefix+'-stage').classList.toggle('hide-before', n < 22);
+            $(prefix+'-stage').classList.toggle('hide-after', n > 78);
             $(prefix+'-slider').value = n;
         }
         function setImages(prefix,item) {
