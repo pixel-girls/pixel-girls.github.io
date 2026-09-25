@@ -993,6 +993,23 @@
             }
         }
 
+
+        /* MODELLKATALÓGUS – háromképes, automatikusan lapozó galériák */
+        .roster-carousel { position:relative; margin-bottom:18px; border:1px solid #333; background:#101010; overflow:hidden; }
+        .roster-carousel .roster-slide { display:none; width:100%; height:360px; object-fit:cover; object-position:center top; margin:0; border:0; cursor:zoom-in; }
+        .roster-carousel .roster-slide.is-active { display:block; animation:roster-fade .35s ease; }
+        @keyframes roster-fade { from {opacity:.45} to {opacity:1} }
+        .roster-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:2; width:38px; height:44px; border:1px solid #e6b12e88; background:#080808cc; color:var(--primary-color); font-size:26px; cursor:pointer; }
+        .roster-arrow:hover,.roster-arrow:focus-visible {background:var(--primary-color);color:#080808;outline:2px solid #fff;outline-offset:2px;}
+        .roster-prev {left:7px;} .roster-next {right:7px;}
+        .roster-dots {display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0;background:#0c0c0c;}
+        .roster-dot {width:10px;height:10px;border-radius:50%;border:1px solid var(--primary-color);background:transparent;cursor:pointer;padding:0;}
+        .roster-dot[aria-current="true"] {background:var(--primary-color);box-shadow:0 0 9px #e6b12e88;}
+        .roster-count {position:absolute;right:10px;top:10px;color:#fff;background:#080808d9;padding:5px 9px;font-size:.72rem;letter-spacing:1px;}
+        .roster-carousel .roster-missing {position:absolute;inset:0 0 30px;display:none;align-items:center;justify-content:center;padding:30px;text-align:center;color:#e6b12e;background:#101010;font-size:.83rem;pointer-events:none;}
+        .roster-carousel .roster-slide.is-active.is-missing + .roster-missing {display:flex;}
+        @media(prefers-reduced-motion:reduce){.roster-carousel .roster-slide.is-active{animation:none;}}
+
     </style>
 </head>
 
@@ -1596,10 +1613,20 @@
 
 
             <div class="roster-card">
-
-                <img src="images/anna.jpg"
-                     alt="Anna - licencelt digitális modell"
-                     onclick="openLightbox('images/anna.jpg')">
+                <div class="roster-carousel" data-model="anna" role="group" aria-label="Anna – három modellfotó, automatikus lapozás">
+                    <img class="roster-slide is-active" src="images/anna.jpg" alt="Anna – modellfotó 1/3" loading="eager" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/anna2.jpg" alt="Anna – modellfotó 2/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/anna3.jpg" alt="Anna – modellfotó 3/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <span class="roster-missing" aria-hidden="true">A kép feltöltés után jelenik meg.</span>
+                    <span class="roster-count" aria-live="off">1 / 3</span>
+                    <button type="button" class="roster-arrow roster-prev" aria-label="Anna – előző kép">&#8249;</button>
+                    <button type="button" class="roster-arrow roster-next" aria-label="Anna – következő kép">&#8250;</button>
+                    <div class="roster-dots" aria-label="Kép kiválasztása">
+                        <button type="button" class="roster-dot" aria-label="1. kép" aria-current="true"></button>
+                        <button type="button" class="roster-dot" aria-label="2. kép" aria-current="false"></button>
+                        <button type="button" class="roster-dot" aria-label="3. kép" aria-current="false"></button>
+                    </div>
+                </div>
 
                 <span class="roster-tag">
                     Elegancia & Ékszerek
@@ -1626,10 +1653,20 @@
 
 
             <div class="roster-card">
-
-                <img src="images/zsofi.jpg"
-                     alt="Zsófi - licencelt digitális modell"
-                     onclick="openLightbox('images/zsofi.jpg')">
+                <div class="roster-carousel" data-model="zsofi" role="group" aria-label="Zsófi – három modellfotó, automatikus lapozás">
+                    <img class="roster-slide is-active" src="images/zsofi.jpg" alt="Zsófi – modellfotó 1/3" loading="eager" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/zsofi2.jpg" alt="Zsófi – modellfotó 2/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/zsofi3.jpg" alt="Zsófi – modellfotó 3/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <span class="roster-missing" aria-hidden="true">A kép feltöltés után jelenik meg.</span>
+                    <span class="roster-count" aria-live="off">1 / 3</span>
+                    <button type="button" class="roster-arrow roster-prev" aria-label="Zsófi – előző kép">&#8249;</button>
+                    <button type="button" class="roster-arrow roster-next" aria-label="Zsófi – következő kép">&#8250;</button>
+                    <div class="roster-dots" aria-label="Kép kiválasztása">
+                        <button type="button" class="roster-dot" aria-label="1. kép" aria-current="true"></button>
+                        <button type="button" class="roster-dot" aria-label="2. kép" aria-current="false"></button>
+                        <button type="button" class="roster-dot" aria-label="3. kép" aria-current="false"></button>
+                    </div>
+                </div>
 
                 <span class="roster-tag">
                     Ruházat & Kiegészítők
@@ -1656,10 +1693,20 @@
 
 
             <div class="roster-card">
-
-                <img src="images/mark.jpg"
-                     alt="Márk - licencelt digitális modell"
-                     onclick="openLightbox('images/mark.jpg')">
+                <div class="roster-carousel" data-model="mark" role="group" aria-label="Márk – három modellfotó, automatikus lapozás">
+                    <img class="roster-slide is-active" src="images/mark.jpg" alt="Márk – modellfotó 1/3" loading="eager" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/mark2.jpg" alt="Márk – modellfotó 2/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <img class="roster-slide" src="images/mark3.jpg" alt="Márk – modellfotó 3/3" loading="lazy" onclick="openLightbox(this.src)">
+                    <span class="roster-missing" aria-hidden="true">A kép feltöltés után jelenik meg.</span>
+                    <span class="roster-count" aria-live="off">1 / 3</span>
+                    <button type="button" class="roster-arrow roster-prev" aria-label="Márk – előző kép">&#8249;</button>
+                    <button type="button" class="roster-arrow roster-next" aria-label="Márk – következő kép">&#8250;</button>
+                    <div class="roster-dots" aria-label="Kép kiválasztása">
+                        <button type="button" class="roster-dot" aria-label="1. kép" aria-current="true"></button>
+                        <button type="button" class="roster-dot" aria-label="2. kép" aria-current="false"></button>
+                        <button type="button" class="roster-dot" aria-label="3. kép" aria-current="false"></button>
+                    </div>
+                </div>
 
                 <span class="roster-tag">
                     Üzleti & Férfi Cikkek
@@ -2099,6 +2146,60 @@
 ===================================================== -->
 
 <script>
+
+
+    /* Modellkatalógus: 3 kép/modell, kézi és automatikus lapozás. */
+    (function initRosterCarousels() {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        document.querySelectorAll('.roster-carousel').forEach(carousel => {
+            const slides = [...carousel.querySelectorAll('.roster-slide')];
+            const dots = [...carousel.querySelectorAll('.roster-dot')];
+            const count = carousel.querySelector('.roster-count');
+            let current = 0;
+            let timer = null;
+            let hovered = false;
+            let focused = false;
+            let visible = true;
+            function show(index) {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('is-active', i === current);
+                    slide.tabIndex = i === current ? 0 : -1;
+                    slide.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+                });
+                dots.forEach((dot, i) => dot.setAttribute('aria-current', i === current ? 'true' : 'false'));
+                count.textContent = `${current + 1} / ${slides.length}`;
+            }
+            function stop() { if (timer !== null) {clearInterval(timer); timer = null;} }
+            function start() {
+                stop();
+                if (!reducedMotion.matches && !hovered && !focused && visible && !document.hidden) {
+                    timer = setInterval(() => show(current + 1), 4500);
+                }
+            }
+            carousel.querySelector('.roster-prev').addEventListener('click', () => {show(current - 1); start();});
+            carousel.querySelector('.roster-next').addEventListener('click', () => {show(current + 1); start();});
+            dots.forEach((dot, i) => dot.addEventListener('click', () => {show(i); start();}));
+            carousel.addEventListener('mouseenter', () => {hovered = true; stop();});
+            carousel.addEventListener('mouseleave', () => {hovered = false; start();});
+            carousel.addEventListener('focusin', () => {focused = true; stop();});
+            carousel.addEventListener('focusout', e => {if (!carousel.contains(e.relatedTarget)) {focused = false; start();}});
+            document.addEventListener('visibilitychange', start);
+            if (typeof reducedMotion.addEventListener === 'function') reducedMotion.addEventListener('change', start);
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(entries => {visible = entries[0].isIntersecting; start();}, {threshold:.1});
+                observer.observe(carousel);
+            }
+            slides.forEach(slide => {
+                slide.addEventListener('error', () => {
+                    slide.classList.add('is-missing');
+                    // Hiányzó fájl esetén is működnek a nyilak és a lapozás.
+                });
+            });
+            show(0);
+            start();
+        });
+    })();
 
     function openLightbox(src) {
 
