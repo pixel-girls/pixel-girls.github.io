@@ -480,52 +480,52 @@
             .step-card, .audience-card, #step-hover-preview { transition: none; }
         }
 
-        /* =====================================================
-           PORTFOLIO
-        ===================================================== */
 
-        .portfolio-section {
-            background: #080808;
-            max-width: none;
-        }
-
-        .gallery {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            cursor: zoom-in;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: brightness(0.95) contrast(1.05);
-        }
-
-        .gallery-caption {
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-        }
+        /* PIXEL-GIRLS SHOWCASE – interaktív referenciagaléria */
+        .showcase { max-width: 1100px; margin: auto; }
+        .showcase-tabs { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin:0 0 28px; }
+        .showcase-tab { font:600 .76rem 'Raleway',sans-serif; letter-spacing:1.2px; padding:13px 18px; background:#111; border:1px solid #444; color:#ccc; cursor:pointer; transition:.25s; }
+        .showcase-tab:hover,.showcase-tab:focus-visible,.showcase-tab[aria-selected="true"] { border-color:var(--primary-color); color:#050505; background:var(--primary-color); }
+        .showcase-main { border:1px solid #493817; background:#101010; box-shadow:0 22px 65px #000a; overflow:hidden; }
+        .showcase-topline { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; padding:17px 22px; }
+        .showcase-eyebrow { color:var(--primary-color); font-size:.72rem; font-weight:700; letter-spacing:2px; }
+        .showcase-counter { color:#999; font-size:.76rem; }
+        .compare-stage { position:relative; aspect-ratio: 16 / 9; background:radial-gradient(circle,#242017,#0a0a0a 70%); overflow:hidden; cursor:ew-resize; touch-action:pan-y; user-select:none; }
+        .compare-stage img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+        .compare-after { clip-path:inset(0 0 0 50%); }
+        .compare-divider { position:absolute; z-index:3; top:0; bottom:0; left:50%; width:2px; background:var(--primary-color); transform:translateX(-50%); pointer-events:none; box-shadow:0 0 14px #000; }
+        .compare-handle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border:2px solid var(--primary-color); border-radius:50%; background:#050505e8; display:grid; place-items:center; color:var(--primary-color); font-size:22px; }
+        .compare-label { position:absolute; z-index:4; top:18px; padding:7px 11px; background:#050505d9; color:#fff; font-size:.68rem; font-weight:700; letter-spacing:1.4px; pointer-events:none; }
+        .compare-label.before { left:16px; }.compare-label.after { right:16px; }
+        .compare-placeholder { position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:24px; color:#adadad; font-size:.9rem; }
+        .compare-placeholder strong { display:block; color:var(--primary-color); margin-bottom:7px; }
+        .compare-stage.has-images .compare-placeholder { display:none; }
+        .showcase-controls { padding:20px 24px 24px; }
+        .showcase-title { font:600 clamp(1.25rem,3vw,1.75rem) 'Playfair Display',serif; color:var(--primary-color); margin:0 0 8px; }
+        .showcase-description { color:#bcbcbc; margin:0 0 17px; font-size:.91rem; }
+        .showcase-slider { width:100%; accent-color:var(--primary-color); cursor:ew-resize; }
+        .showcase-actions { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:17px; }
+        .showcase-hint { color:#999; font-size:.76rem; }
+        .showcase-open { background:transparent; color:var(--primary-color); border:1px solid var(--primary-color); padding:10px 14px; cursor:pointer; font:700 .74rem 'Raleway',sans-serif; letter-spacing:1px; }
+        .showcase-open:hover { background:var(--primary-color); color:#000; }
+        .showcase-thumbs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; margin-top:22px; }
+        .showcase-thumb { display:block; text-align:left; background:#101010; color:#eee; border:1px solid #303030; padding:0; cursor:pointer; overflow:hidden; transition:transform .25s,border-color .25s; font:inherit; }
+        .showcase-thumb:hover,.showcase-thumb:focus-visible { transform:translateY(-4px); border-color:var(--primary-color); }
+        .showcase-thumb[aria-pressed="true"] { border-color:var(--primary-color); box-shadow:0 0 0 1px var(--primary-color); }
+        .showcase-thumb-photo { display:grid; place-items:center; aspect-ratio: 4/3; background:#181818; color:#888; position:relative; overflow:hidden; }
+        .showcase-thumb-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+        .showcase-thumb:hover img { transform:scale(1.045); }
+        .showcase-thumb-name { display:block; padding:14px; color:var(--primary-color); font-weight:700; font-size:.76rem; letter-spacing:.6px; }
+        .showcase-modal { position:fixed; inset:0; z-index:9000; display:none; align-items:center; justify-content:center; padding:18px; background:#000f; }
+        .showcase-modal.is-open { display:flex; }
+        .showcase-modal-inner { width:min(1200px,100%); max-height:95vh; overflow:auto; border:1px solid var(--primary-color); background:#0b0b0b; }
+        .showcase-modal-head { display:flex; align-items:center; justify-content:space-between; padding:10px 18px; gap:12px; }
+        .showcase-modal-head strong { color:var(--primary-color); font-size:.9rem; }
+        .showcase-modal-close { background:transparent; color:white; border:0; font-size:32px; cursor:pointer; line-height:1; }
+        .showcase-modal .compare-stage { aspect-ratio:16/9; max-height:calc(95vh - 150px); }
+        .showcase-modal .showcase-controls { padding:12px 22px 20px; }
+        @media(max-width:700px) { .showcase-thumbs {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;} .showcase-topline {padding:12px;} .compare-stage {aspect-ratio:4/5;} .showcase-modal .compare-stage {aspect-ratio:4/5;max-height:calc(95vh - 125px);} .showcase-controls {padding:15px;} .compare-label {top:10px;font-size:.58rem;} .compare-label.before {left:8px;} .compare-label.after {right:8px;} .showcase-hint {max-width:220px;} }
+        @media(prefers-reduced-motion:reduce) { .showcase-thumb,.showcase-thumb-photo img,.showcase-tab {transition:none;} }
 
         /* =====================================================
            B2B INTRO
@@ -1320,107 +1320,54 @@
 
 
 <!-- =====================================================
-     PORTFÓLIÓ
+     INTERAKTÍV REFERENCIAGALÉRIA
 ===================================================== -->
-
-<section class="portfolio-section"
-         id="portfolio">
-
+<section class="portfolio-section" id="portfolio">
     <div class="section-inner">
-
-        <div class="section-kicker">
-            Portfólió
+        <div class="section-kicker">Pixel-Girls | Referenciamunkák</div>
+        <h2>EGY FOTÓBÓL<br>TELJES VIZUÁLIS VILÁG</h2>
+        <p class="section-desc">Nézd meg, hogyan válik egy hétköznapi fotóból magabiztos társkereső portré, professzionális üzleti megjelenés vagy prémium kampánykép. Ugyanaz az arc, ugyanaz a karakter – egy egészen új vizuális élmény.</p>
+        <div class="showcase">
+            <div class="showcase-tabs" role="tablist" aria-label="Referenciák kategóriái">
+                <button class="showcase-tab" type="button" role="tab" aria-selected="true" data-showcase-category="szemelyes">SZEMÉLYES ÁTALAKULÁSOK</button>
+                <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-showcase-category="kampany">KREATÍV KAMPÁNYOK</button>
+            </div>
+            <div class="showcase-main">
+                <div class="showcase-topline"><span class="showcase-eyebrow">PIXEL-GIRLS SHOWCASE</span><span class="showcase-counter" id="showcase-counter" aria-live="polite">01 / 03</span></div>
+                <div class="compare-stage" id="showcase-stage" aria-label="Eredeti és elkészült kép összehasonlítása">
+                    <div class="compare-placeholder"><div><strong>A referenciafotók helye</strong>A képek feltöltése után itt jelenik meg az interaktív összehasonlítás.</div></div>
+                    <img class="compare-before" id="showcase-before" alt="Eredeti referenciafotó">
+                    <img class="compare-after" id="showcase-after" alt="Elkészült Pixel-Girls referenciafotó">
+                    <span class="compare-label before">EREDETI</span><span class="compare-label after">VÉGEREDMÉNY</span>
+                    <span class="compare-divider" id="showcase-divider"><span class="compare-handle">↔</span></span>
+                </div>
+                <div class="showcase-controls">
+                    <h3 class="showcase-title" id="showcase-title">Társkereső profil újragondolva</h3>
+                    <p class="showcase-description" id="showcase-description">Természetes karakter, előnyös megvilágítás és magabiztos megjelenés.</p>
+                    <input class="showcase-slider" id="showcase-slider" type="range" min="0" max="100" value="50" aria-label="Az eredeti és az elkészült fotó közötti választóvonal">
+                    <div class="showcase-actions"><span class="showcase-hint">Húzd el a választóvonalat, és fedezd fel a különbséget!</span><button type="button" class="showcase-open" id="showcase-open">NAGY MÉRETBEN ↗</button></div>
+                </div>
+            </div>
+            <div class="showcase-thumbs" id="showcase-thumbs" aria-label="Választható referenciamunkák"></div>
+            <div style="text-align:center; margin-top:40px;"><a href="https://www.instagram.com/pixelgirlsstudio/" target="_blank" rel="noopener" class="btn">INSTAGRAM: @PIXELGIRLSSTUDIO</a></div>
         </div>
-
-        <h2>
-            EGY FOTÓBÓL<br>
-            TELJES VIZUÁLIS VILÁG
-        </h2>
-
-        <p class="section-desc">
-
-            Megőrizzük az eredeti, természetes karaktert,
-            miközben a megvilágítást, környezetet,
-            stylingot és képi világot prémium szintre emeljük.
-
-        </p>
-
-
-        <div class="gallery">
-
-
-            <div class="gallery-item"
-                 onclick="openLightbox('images/4.jpg')">
-
-                <img src="images/4.jpg"
-                     alt="Saját fotó - társkereső profil">
-
-                <div class="gallery-caption">
-                    SAJÁT FOTÓ ➔ VONZÓ TÁRSKERESŐ PROFIL
-                </div>
-
-            </div>
-
-
-            <div class="gallery-item"
-                 onclick="openLightbox('images/1.jpg')">
-
-                <img src="images/1.jpg"
-                     alt="Saját fotó - glamour">
-
-                <div class="gallery-caption">
-                    SAJÁT FOTÓ ➔ PRÉMIUM GLAMOUR / BOUDOIR
-                </div>
-
-            </div>
-
-
-            <div class="gallery-item"
-                 onclick="openLightbox('images/5.jpg')">
-
-                <img src="images/5.jpg"
-                     alt="Saját fotó - üzleti portré">
-
-                <div class="gallery-caption">
-                    SAJÁT FOTÓ ➔ PROFI ÜZLETI PORTRÉ
-                </div>
-
-            </div>
-
-
-            <div class="gallery-item"
-                 onclick="openLightbox('images/3.jpg')">
-
-                <img src="images/3.jpg"
-                     alt="Termék - modell kampány">
-
-                <div class="gallery-caption">
-                    TERMÉK ➔ MODELLKAMPÁNY WEBSHOPOKNAK
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div style="text-align:center; margin-top:40px;">
-
-            <a href="https://www.instagram.com/pixelgirlsstudio/"
-               target="_blank"
-               rel="noopener"
-               class="btn">
-
-                INSTAGRAM: @PIXELGIRLSSTUDIO
-
-            </a>
-
-        </div>
-
     </div>
-
 </section>
 
+<!-- Önálló, nagy méretű összehasonlító nézet; a meglévő lightbox változatlan marad. -->
+<div class="showcase-modal" id="showcase-modal" role="dialog" aria-modal="true" aria-label="Referenciafotó nagy méretben" aria-hidden="true">
+    <div class="showcase-modal-inner">
+        <div class="showcase-modal-head"><strong id="showcase-modal-title">Referenciafotó</strong><button type="button" class="showcase-modal-close" id="showcase-modal-close" aria-label="Bezárás">&times;</button></div>
+        <div class="compare-stage" id="showcase-modal-stage">
+            <div class="compare-placeholder"><div><strong>A referenciafotók helye</strong>Töltsd fel a megfelelő képpárt az images mappába.</div></div>
+            <img class="compare-before" id="showcase-modal-before" alt="Eredeti referenciafotó">
+            <img class="compare-after" id="showcase-modal-after" alt="Elkészült referenciafotó">
+            <span class="compare-label before">EREDETI</span><span class="compare-label after">VÉGEREDMÉNY</span>
+            <span class="compare-divider" id="showcase-modal-divider"><span class="compare-handle">↔</span></span>
+        </div>
+        <div class="showcase-controls"><input class="showcase-slider" id="showcase-modal-slider" type="range" min="0" max="100" value="50" aria-label="Nagyított kép összehasonlítása"></div>
+    </div>
+</div>
 
 <!-- =====================================================
      B2B
@@ -2226,6 +2173,125 @@
             event.stopPropagation();
 
         });
+
+
+    /* =====================================================
+       PIXEL-GIRLS SHOWCASE – képek az images mappában.
+       Új referencia hozzáadásához a showcaseItems tömböt bővítsd.
+    ===================================================== */
+    (function () {
+        const showcaseItems = [
+            {category:'szemelyes',title:'Társkereső profil újragondolva',description:'Természetes karakter, előnyös megvilágítás és magabiztos megjelenés.',before:'images/tars-eredeti.jpg',after:'images/tars-vegeredmeny.jpg'},
+            {category:'szemelyes',title:'Prémium glamour és boudoir',description:'Egyedi hangulat, kifinomult styling és személyre szabott képi világ.',before:'images/glamour-eredeti.jpg',after:'images/glamour-vegeredmeny.jpg'},
+            {category:'szemelyes',title:'Professzionális üzleti portré',description:'Hiteles, bizalomkeltő megjelenés LinkedInhez, önéletrajzhoz és weboldalhoz.',before:'images/uzleti-eredeti.jpg',after:'images/uzleti-vegeredmeny.jpg'},
+            {category:'kampany',title:'Parfüm – prémium kampány',description:'Termékfotóból karakteres, modellközpontú reklámvizuál.',before:'images/parfum-eredeti.jpg',after:'images/parfum-vegeredmeny.jpg'},
+            {category:'kampany',title:'Ékszer – elegáns kampány',description:'A termék részleteit és a modell megjelenését összehangoló kreatív.',before:'images/ekszer-eredeti.jpg',after:'images/ekszer-vegeredmeny.jpg'},
+            {category:'kampany',title:'Divat – digitális modellkampány',description:'Ruházat és kiegészítők új vizuális környezetben, kampánycélra készítve.',before:'images/divat-eredeti.jpg',after:'images/divat-vegeredmeny.jpg'}
+        ];
+        const $ = id => document.getElementById(id);
+        const tabs = document.querySelectorAll('[data-showcase-category]');
+        const thumbs = $('showcase-thumbs');
+        const modal = $('showcase-modal');
+        let category = 'szemelyes';
+        let currentIndex = 0;
+        let lastFocus = null;
+        function items() { return showcaseItems.filter(item => item.category === category); }
+        function setComparison(prefix, value) {
+            const n = Math.max(0,Math.min(100,Number(value)));
+            $(prefix+'-after').style.clipPath = 'inset(0 0 0 '+n+'%)';
+            $(prefix+'-divider').style.left = n+'%';
+            $(prefix+'-slider').value = n;
+        }
+        function setImages(prefix,item) {
+            const stage=$(prefix+'-stage');
+            const before=$(prefix+'-before');
+            const after=$(prefix+'-after');
+            stage.classList.remove('has-images');
+            let loaded=0;
+            const update=()=>{ if(loaded===2) stage.classList.add('has-images'); };
+            [before,after].forEach((img,i)=>{
+                img.onload=()=>{loaded++;update();};
+                img.onerror=()=>{img.removeAttribute('src');stage.classList.remove('has-images');};
+                img.src=i===0?item.before:item.after;
+            });
+            setComparison(prefix,50);
+        }
+        function render() {
+            const list=items(), item=list[currentIndex];
+            $('showcase-counter').textContent=String(currentIndex+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0');
+            $('showcase-title').textContent=item.title;
+            $('showcase-description').textContent=item.description;
+            $('showcase-modal-title').textContent=item.title;
+            setImages('showcase',item);
+            setImages('showcase-modal',item);
+            thumbs.replaceChildren();
+            list.forEach((entry,i)=>{
+                const btn=document.createElement('button');
+                btn.type='button';btn.className='showcase-thumb';
+                btn.setAttribute('aria-pressed',String(i===currentIndex));
+                btn.setAttribute('aria-label',entry.title+' – referencia megtekintése');
+                const photo=document.createElement('span');photo.className='showcase-thumb-photo';
+                photo.textContent='KÉP HAMAROSAN';
+                const img=document.createElement('img');img.alt='';img.loading='lazy';
+                img.onerror=()=>img.remove();img.src=entry.after;photo.appendChild(img);
+                const name=document.createElement('span');name.className='showcase-thumb-name';name.textContent=entry.title;
+                btn.append(photo,name);
+                btn.addEventListener('click',()=>{currentIndex=i;render();});
+                thumbs.appendChild(btn);
+            });
+        }
+        tabs.forEach(tab=>tab.addEventListener('click',()=>{
+            category=tab.dataset.showcaseCategory;currentIndex=0;
+            tabs.forEach(t=>t.setAttribute('aria-selected',String(t===tab)));
+            render();
+        }));
+        function attachDrag(prefix) {
+            const stage=$(prefix+'-stage');
+            const slider=$(prefix+'-slider');
+            slider.addEventListener('input',()=>setComparison(prefix,slider.value));
+            function move(event) {
+                const rect=stage.getBoundingClientRect();
+                setComparison(prefix,100*(event.clientX-rect.left)/rect.width);
+            }
+            stage.addEventListener('pointerdown',event=>{
+                if(event.pointerType==='mouse' && event.button!==0)return;
+                stage.setPointerCapture(event.pointerId);move(event);
+            });
+            stage.addEventListener('pointermove',event=>{
+                if(stage.hasPointerCapture(event.pointerId))move(event);
+            });
+            stage.addEventListener('pointerup',event=>{
+                if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);
+            });
+        }
+        attachDrag('showcase');attachDrag('showcase-modal');
+        function closeModal() {
+            if(!modal.classList.contains('is-open'))return;
+            modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');
+            document.body.classList.remove('no-scroll');
+            if(lastFocus)lastFocus.focus();
+        }
+        $('showcase-open').addEventListener('click',()=>{
+            lastFocus=document.activeElement;
+            modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');
+            setComparison('showcase-modal',$('showcase-slider').value);
+            document.body.classList.add('no-scroll');
+            $('showcase-modal-close').focus();
+        });
+        $('showcase-modal-close').addEventListener('click',closeModal);
+        modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
+        document.addEventListener('keydown',event=>{
+            if(!modal.classList.contains('is-open'))return;
+            if(event.key==='Escape'){event.preventDefault();closeModal();}
+            if(event.key==='Tab'){
+                const controls=[$('showcase-modal-close'),$('showcase-modal-slider')];
+                const i=controls.indexOf(document.activeElement);
+                if(event.shiftKey && i===0){event.preventDefault();controls[1].focus();}
+                else if(!event.shiftKey && i===1){event.preventDefault();controls[0].focus();}
+            }
+        });
+        render();
+    }());
 
 </script>
 
