@@ -422,11 +422,12 @@
 
 
         /* PROCESS IMAGE PREVIEW — az eredeti kártyaelrendezés megtartásával */
-        .step-card {
+        .step-card, .audience-card[data-step-image] {
             cursor: zoom-in;
             transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
         }
-        .step-card:hover, .step-card:focus-visible {
+        .step-card:hover, .step-card:focus-visible,
+        .audience-card[data-step-image]:hover, .audience-card[data-step-image]:focus-visible {
             border-color: var(--primary-color);
             box-shadow: 0 8px 28px rgba(230,177,46,.13);
             transform: translateY(-4px);
@@ -470,13 +471,13 @@
             background: #090909;
         }
         @media (hover: none) {
-            .step-card { cursor: zoom-in; }
-            .step-card:hover { transform: none; }
+            .step-card, .audience-card[data-step-image] { cursor: zoom-in; }
+            .step-card:hover, .audience-card[data-step-image]:hover { transform: none; }
             #step-hover-preview { display: none; }
             .step-preview-hint { opacity: 1; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .step-card, #step-hover-preview { transition: none; }
+            .step-card, .audience-card, #step-hover-preview { transition: none; }
         }
 
         /* =====================================================
@@ -985,7 +986,7 @@
 
 </div>
 
-<!-- Lebegő előnézet a négy folyamatkártyához -->
+<!-- Lebegő előnézet a folyamat- és szolgáltatáskártyákhoz -->
 <div id="step-hover-preview" aria-hidden="true">
     <img id="step-hover-img" alt="A kiválasztott munkafázis bemutatóképe">
 </div>
@@ -1056,17 +1057,16 @@
     </div>
 
     <h1>
-        PROFESSIONÁLIS FOTÓK.
-        <span>FOTÓZÁS NÉLKÜL.</span>
+        A TE ARCOD. A TE STÍLUSOD.
+        <span>EGY ÚJ DIMENZIÓ.</span>
     </h1>
 
     <p class="hero-lead">
-
-        A saját fotóidból vagy valódi, licencelt modelljeinkből
-        készítünk <strong>stúdióminőségű képeket</strong> —
-        mesterséges intelligenciával, fotográfiai szemlélettel
-        és professzionális utómunkával.
-
+        <strong>Prémium digitális fotósorozatok – stúdiófotózás nélkül.</strong><br>
+        Meglévő fényképeidből, fotográfiai szakértelemmel és
+        mesterséges intelligencia segítségével készítünk egyedi portrékat.
+        Cégeknek valódi, licencelt modellekkel és termékfotókkal
+        alkotunk reklám- és kampányképeket.
     </p>
 
     <div class="cta-group">
@@ -1085,9 +1085,9 @@
 
     <p class="hero-note">
 
-        Nincs stúdió. Nincs utazás. Nincs fotózási nap.
+        Nincs utazás, nincs kamerafeszengés, nincs hagyományos fotózási nap.
         <br>
-        Te adod a fotókat. Mi elkészítjük a képeket.
+        Te hozod az elképzelést. Mi megalkotjuk a képeket.
 
     </p>
 
@@ -1119,7 +1119,7 @@
     <div class="audience-grid">
 
 
-        <div class="audience-card">
+        <div class="audience-card" tabindex="0" role="button" aria-label="Bemutatókép megtekintése" data-step-image="images/tars.jpg" data-preview-width="1200">
 
             <div class="audience-number">
                 01
@@ -1140,10 +1140,12 @@
                 TÁRSKERESŐ CSOMAG →
             </a>
 
+            <span class="step-preview-hint">KÉP MEGTEKINTÉSE ↗</span>
+
         </div>
 
 
-        <div class="audience-card">
+        <div class="audience-card" tabindex="0" role="button" aria-label="Bemutatókép megtekintése" data-step-image="images/linkedin.jpg" data-preview-width="1200">
 
             <div class="audience-number">
                 02
@@ -1164,10 +1166,12 @@
                 ÜZLETI CSOMAG →
             </a>
 
+            <span class="step-preview-hint">KÉP MEGTEKINTÉSE ↗</span>
+
         </div>
 
 
-        <div class="audience-card">
+        <div class="audience-card" tabindex="0" role="button" aria-label="Bemutatókép megtekintése" data-step-image="images/kampany.jpg" data-preview-width="1200">
 
             <div class="audience-number">
                 03
@@ -1186,6 +1190,8 @@
                class="mini-link">
                 CÉGES MEGOLDÁSOK →
             </a>
+
+            <span class="step-preview-hint">KÉP MEGTEKINTÉSE ↗</span>
 
         </div>
 
@@ -2141,13 +2147,13 @@
 
 
     /* =====================================================
-       FOLYAMAT — HOVER ELŐNÉZET + MOBILOS MEGNYITÁS
-       A képek az images mappában: 1.fazis.jpg ... 4.fazis.jpg
+       FOLYAMAT ÉS SZOLGÁLTATÁSOK — HOVER ELŐNÉZET + MOBILOS MEGNYITÁS
+       A képek az images mappában: 1–4.fazis.jpg, tars.jpg, linkedin.jpg, kampany.jpg
     ===================================================== */
     (function () {
         const preview = document.getElementById('step-hover-preview');
         const previewImg = document.getElementById('step-hover-img');
-        const cards = document.querySelectorAll('.steps-container .step-card[data-step-image]');
+        const cards = document.querySelectorAll('.step-card[data-step-image], .audience-card[data-step-image]');
         const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
         let activeCard = null;
 
@@ -2179,12 +2185,13 @@
             card.addEventListener('mouseleave', function () { hidePreview(card); });
             card.addEventListener('focus', function () { showPreview(card); });
             card.addEventListener('blur', function () { hidePreview(card); });
-            card.addEventListener('click', function () {
+            card.addEventListener('click', function (event) {
+                if (event.target.closest('a')) return;
                 hidePreview();
                 openLightbox(card.dataset.stepImage);
             });
             card.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
+                if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a')) {
                     event.preventDefault();
                     hidePreview();
                     openLightbox(card.dataset.stepImage);
