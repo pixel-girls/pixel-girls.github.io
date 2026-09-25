@@ -1045,6 +1045,82 @@ section[id] {scroll-margin-top:85px;}
 @media(max-width:700px){.hero-paths{grid-template-columns:1fr;max-width:440px}.hero-path img{height:190px}.campaign-gallery-grid{grid-template-columns:1fr;max-width:510px;margin:30px auto 0}.campaign-gallery-photo{aspect-ratio:4/4}.audience-band{padding:25px 15px}.campaign-gallery-section{padding:55px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-path,.campaign-gallery-card{transition:none}}
 
+
+/* =====================================================
+   OLVASHATÓSÁGI FINOMÍTÁS – az eredeti arculat és layout megtartásával
+===================================================== */
+:root {
+    --text-muted: #c9c9c9;
+    --text-dark: #b5b5b5;
+}
+
+/* Főszövegek és a képernyőképen látható három kiemelt kártya */
+.hero-note, .section-desc, .b2b-intro-text, .final-cta p,
+.audience-card p, .step-card p, .b2b-card p, .roster-card p,
+.feature-box p, .showcase-description, .catalogue-note,
+.partner-links p, .audience-band p {
+    color: #cecece;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+.hero-note { font-size: .9rem; }
+.section-desc { font-size: 1rem; }
+.feature-box h3, .step-card h3, .audience-card h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+/* Kisebb eligazító feliratok – diszkrét, de olvasható arany/szürke */
+.section-kicker, .hero-eyebrow, .audience-band span,
+.showcase-eyebrow, .roster-tag {
+    color: var(--primary-color);
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.step-preview-hint, .mini-link, .showcase-hint,
+.showcase-counter, .showcase-instruction, .compare-instruction,
+.catalogue-note, .price-sub, .price-badge,
+.campaign-gallery-meta em, .campaign-gallery-fallback {
+    font-size: .85rem;
+    line-height: 1.55;
+}
+.showcase-hint, .showcase-counter, .compare-instruction,
+.price-sub { color: #c2c2c2; }
+
+/* Árlista, partnerek, kapcsolat és lábléc */
+.price-details, .price-card p, .partner-links p, .email,
+.partner-btn, footer p, footer a {
+    color: #c6c6c6;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.65;
+}
+.price-details li { color: #d0d0d0; }
+footer a:hover, .email:hover, .partner-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Galéria és modellkatalógus apró szövegei */
+.showcase-thumb-name, .campaign-gallery-meta small,
+.roster-count, .compare-label, .campaign-badge,
+.showcase-open, .showcase-tab, .roster-card .roster-tag {
+    font-size: .82rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.campaign-gallery-meta small { color: #d0d0d0; }
+.hero-path-body small { color: #d4d4d4; font-size: .94rem; }
+
+@media (max-width: 600px) {
+    .feature-box p, .audience-card p, .step-card p,
+    .b2b-card p, .roster-card p, .section-desc {
+        font-size: .95rem;
+    }
+    .section-kicker { letter-spacing: 2px; }
+}
+
 </style>
 </head>
 
