@@ -12,25 +12,25 @@
 
     <meta name="author" content="Pixel-Girls Studio">
 
-    <!-- Tesztoldal: a Google indexelését noindex tiltja. Az éles oldal: https://pixel-girls.hu/ -->
+    <!-- Éles weboldal: https://pixel-girls.hu/ -->
 
     <!-- Open Graph -->
     <meta property="og:title" content="Pixel-Girls Studio | AI portré, glamour és digitális reklámkampány">
     <meta property="og:description" content="AI glamour és boudoir, társkereső és üzleti portrék saját fotóból; reklámkampányok licencelt modellekkel vállalkozásoknak.">
-    <meta property="og:image" content="https://pixel-girls.github.io/images/pixelgirlsbanner.jpeg">
+    <meta property="og:image" content="https://pixel-girls.hu/images/pixelgirlsbanner.jpeg">
     <meta property="og:image:alt" content="Pixel-Girls Studio – digitális portrék és reklámkampányok">
     <meta property="og:locale" content="hu_HU">
-    <meta property="og:url" content="https://pixel-girls.github.io/">
+    <meta property="og:url" content="https://pixel-girls.hu/">
     <meta property="og:type" content="website">
 
-    <meta name="robots" content="noindex, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://pixel-girls.hu/">
 
     <!-- Közösségi megosztási előnézet -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pixel-Girls Studio | AI portré, glamour és digitális reklámkampány">
     <meta name="twitter:description" content="Személyes digitális portrék és licencelt modellekkel készülő prémium reklámkampányok.">
-    <meta name="twitter:image" content="https://pixel-girls.github.io/images/pixelgirlsbanner.jpeg">
+    <meta name="twitter:image" content="https://pixel-girls.hu/images/pixelgirlsbanner.jpeg">
 
     <!-- A nyilvános weboldal tényszerű strukturált adatai -->
     <script type="application/ld+json">
@@ -1137,6 +1137,21 @@ footer a:hover, .email:hover, .partner-btn:hover {
     .section-kicker { letter-spacing: 2px; }
 }
 
+
+/* Ügyfél-előnyök – magánszemélyek és vállalkozások */
+.pg-benefits{max-width:1100px;margin:0 auto 58px;padding:0 4px;}
+.pg-benefits-heading{text-align:center;max-width:820px;margin:0 auto 30px;}
+.pg-benefits-eyebrow{display:block;color:var(--primary-color);font-size:.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.pg-benefits-heading h3{font-family:'Playfair Display',serif;color:var(--primary-color);font-size:clamp(1.65rem,3.2vw,2.6rem);line-height:1.22;margin:0 0 15px;}
+.pg-benefits-heading p{color:#d3d3d3;font-size:1rem;font-weight:400;line-height:1.75;margin:0;}
+.pg-benefits-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.pg-benefit{display:flex;align-items:flex-start;gap:18px;padding:26px 24px;background:#141414;border:1px solid #3b321f;border-left:3px solid var(--primary-color);min-width:0;}
+.pg-benefit-icon{display:flex;align-items:center;justify-content:center;flex:0 0 46px;width:46px;height:46px;border:1px solid #826626;border-radius:50%;color:var(--primary-color);font-size:1.4rem;line-height:1;font-weight:700;}
+.pg-benefit h4{color:#f5f5f5;font-size:1.04rem;font-weight:700;line-height:1.4;margin:0 0 8px;}
+.pg-benefit p{color:#cecece;font-size:.96rem;line-height:1.75;font-weight:400;margin:0;}
+.pg-benefits-business .pg-benefit{background:#17140f;}
+@media(max-width:700px){.pg-benefits{margin-bottom:42px}.pg-benefits-grid{grid-template-columns:1fr;gap:13px}.pg-benefit{padding:20px 18px;gap:14px}.pg-benefit-icon{flex-basis:40px;width:40px;height:40px;font-size:1.2rem}.pg-benefits-heading p{font-size:.96rem}}
+
 </style>
 </head>
 
@@ -1349,6 +1364,22 @@ footer a:hover, .email:hover, .partner-btn:hover {
 
 <section id="maganszemely" class="private-area">
     <div class="audience-band"><span>01 / MAGÁNÜGYFELEKNEK</span><h2>A LEGJOBB ARCODAT MUTATJUK MEG.</h2><p>Saját fényképeidből új vizuális világot építünk, miközben megőrizzük a természetes karakteredet.</p></div>
+
+    <!-- ELŐNYÖK MAGÁNÜGYFELEKNEK -->
+    <div class="pg-benefits pg-benefits-private" aria-labelledby="pg-private-benefits-title">
+        <div class="pg-benefits-heading">
+            <span class="pg-benefits-eyebrow">Miért lehet jó választás neked?</span>
+            <h3 id="pg-private-benefits-title">A FOTÓZÁS ÉLMÉNYE. A FOTÓZÁS KÖTÖTTSÉGEI NÉLKÜL.</h3>
+            <p>Nem kell profi modellnek lenned ahhoz, hogy professzionális képeid készüljenek. A saját fotóidból indulunk ki, és olyan vizuális világot építünk köréd, amely hagyományos fotózással több szervezést igényelhetne.</p>
+        </div>
+        <div class="pg-benefits-grid">
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">⌂</span><div><h4>Nem kell stúdióba utaznod.</h4><p>Az otthon elkészített referenciaképeidből is elindulhatunk.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">✦</span><div><h4>Nem kell teljes ruhatárat beszerezned.</h4><p>Különböző stílusokat, öltözékeket és képi világokat próbálhatunk ki digitálisan.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">◈</span><div><h4>Diszkrét és kényelmes folyamat.</h4><p>Nincs idegen stáb, kamera előtti feszengés vagy kötelező személyes találkozó.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">▣</span><div><h4>Előbb megnézed, aztán döntesz.</h4><p>Az elkészült képeket vízjelezett előnézetben tekintheted meg a végleges átadás előtt.</p></div></article>
+        </div>
+    </div>
+
 
     <div class="section-kicker">
         Egy technológia. Több megoldás.
@@ -1634,6 +1665,22 @@ footer a:hover, .email:hover, .partner-btn:hover {
 <section class="section-dark"
          id="cegek" class="business-area">
     <div class="audience-band audience-band-business"><span>02 / VÁLLALKOZÁSOKNAK</span><h2>A TERMÉKEDBŐL KAMPÁNYT ALKOTUNK.</h2><p>Valódi modellek digitális karaktereivel és termékfotóiddal készítünk prémium reklámképeket.</p></div>
+
+    <!-- ELŐNYÖK VÁLLALKOZÁSOKNAK -->
+    <div class="pg-benefits pg-benefits-business" aria-labelledby="pg-business-benefits-title">
+        <div class="pg-benefits-heading">
+            <span class="pg-benefits-eyebrow">Miért lehet előnyös a márkádnak?</span>
+            <h3 id="pg-business-benefits-title">KAMPÁNYMINŐSÉG. EGYSZERŰBB PRODUKCIÓ.</h3>
+            <p>Valódi modellekre épülő digitális kampányokat készítünk márkáknak és webáruházaknak. A termékedet, a választott modellt és a kívánt képi világot egyetlen vizuális koncepcióban egyesítjük.</p>
+        </div>
+        <div class="pg-benefits-grid">
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">♙</span><div><h4>Valódi modellek, választható karakterek.</h4><p>Nem kell minden kampányhoz új szereplőt keresned. Licencelt digitális modellkarakterekből választhatsz.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">◇</span><div><h4>Kevesebb produkciós költség.</h4><p>Csökkenthető a stúdió, az utazás, a helyszín, a casting és a hagyományos fotózási nap szervezési igénye.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">▤</span><div><h4>Egy termékből több kampányvilág.</h4><p>Ugyanazt a terméket különböző modellekkel, hangulatokban és vizuális koncepciókban mutathatjuk be.</p></div></article>
+            <article class="pg-benefit"><span class="pg-benefit-icon" aria-hidden="true">✓</span><div><h4>Tisztázott felhasználási feltételek.</h4><p>A modellkarakterek és az elkészült kampányanyagok felhasználását előre meghatározott licencfeltételekhez kötjük.</p></div></article>
+        </div>
+    </div>
+
 
     <div class="section-inner">
 
